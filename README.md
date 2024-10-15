@@ -47,6 +47,24 @@ DistilBERT is a smaller, faster, and lighter version of BERT that retains much o
 
 For a more detailed explanation, check out this [video on DistilBERT](https://www.youtube.com/watch?v=90mGPxR2GgY).
 
+### Visual Representations
+
+To better understand the architecture and functioning of transformer models like DistilBERT, refer to the following images:
+
+1. **Transformer Model Architecture**
+
+![Transformer Model Architecture](Transformers%20Model.png)
+
+This image illustrates the overall architecture of a transformer model, showing the encoder and decoder components, as well as the attention mechanisms.
+
+2. **Word Embeddings**
+
+![Word Embeddings](Embeddings.png)
+
+This image demonstrates how words are converted into numerical representations (embeddings) that can be processed by the model.
+
+These visual aids help in grasping the complex structure and operations of transformer-based models like DistilBERT.
+
 ## CPU Optimization
 
 We use a custom-compiled wheel with AVX2 and FMA enabled for CPU optimization during training. This wheel is compatible with Python 3.9, which is currently the most compatible Python version for machine learning and deep learning technologies.
