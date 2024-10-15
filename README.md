@@ -456,19 +456,19 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## References
 
-1. [youtube-subtitles-downloader](https://github.com/eliascotto/youtube-subtitles-downloader)
-2. [PLWIZ](https://github.com/SomeOrdinaryBro/PLWIZ)
-3. [transcribe](https://github.com/vivekuppal/transcribe)
-4. [vibe](https://thewh1teagle.github.io/vibe/)
-5. [DistilBERT - Hugging Face](https://huggingface.co/docs/transformers/model_doc/distilbert)
-6. [Retrieval Augmented Generation (RAG) - Hugging Face](https://huggingface.co/docs/transformers/model_doc/rag)
-7. [LLaMA - Facebook Research](https://github.com/facebookresearch/llama)
-8. [TensorFlow.js](https://www.tensorflow.org/js)
-9. [DistilBERT Explained Video](https://www.youtube.com/watch?v=90mGPxR2GgY)
-10. [RAG Explained Video](https://www.youtube.com/watch?v=rhZgXNdhWDY)
-11. [Hugging Face RAG Documentation](https://huggingface.co/docs/transformers/model_doc/rag)
-12. [RAG Paper](https://arxiv.org/abs/2005.11401)
-13. [Ollama](https://ollama.com)
-14. [TensorFlow GitHub Repository](https://github.com/tensorflow/tensorflow)
-15. [Audio-Engineer-Sound-Design-LLM Releases](https://github.com/ostinsolo/Audio-Engineer-Sound-Design-LLM/releases/tag/v0.0.2)
-16. [LangChain.js GitHub Repository](https://github.com/langchain-ai/langchainjs)
+1. [youtube-subtitles-downloader](https://github.com/eliascotto/youtube-subtitles-downloader): A Node.js tool for downloading YouTube subtitles, used in data collection.
+2. [PLWIZ](https://github.com/SomeOrdinaryBro/PLWIZ): A tool for downloading video and Instagram content, used in data collection.
+3. [transcribe](https://github.com/vivekuppal/transcribe): A tool for accurate transcription of audio content.
+4. [vibe](https://thewh1teagle.github.io/vibe/): An alternative tool for audio transcription.
+5. [DistilBERT - Hugging Face](https://huggingface.co/docs/transformers/model_doc/distilbert): Documentation for DistilBERT, the lightweight BERT model used in this project.
+6. [Retrieval Augmented Generation (RAG) - Hugging Face](https://huggingface.co/docs/transformers/model_doc/rag): Documentation for RAG, used to enhance response accuracy and context relevance.
+7. [LLaMA - Facebook Research](https://github.com/facebookresearch/llama): Large language model used for advanced reasoning tasks.
+8. [TensorFlow.js](https://www.tensorflow.org/js): Library used for deploying and running the model in JavaScript environments.
+9. [DistilBERT Explained Video](https://www.youtube.com/watch?v=90mGPxR2GgY): Educational video explaining the workings of DistilBERT.
+10. [RAG Explained Video](https://www.youtube.com/watch?v=rhZgXNdhWDY): Educational video explaining Retrieval Augmented Generation.
+11. [Hugging Face RAG Documentation](https://huggingface.co/docs/transformers/model_doc/rag): Comprehensive guide on implementing and using RAG models.
+12. [RAG Paper](https://arxiv.org/abs/2005.11401): Original research paper introducing RAG and its methodologies.
+13. [Ollama](https://ollama.com): Tool used for running and serving LLaMA models.
+14. [TensorFlow GitHub Repository](https://github.com/tensorflow/tensorflow): Source code for TensorFlow, used in building optimized wheels.
+15. [Audio-Engineer-Sound-Design-LLM Releases](https://github.com/ostinsolo/Audio-Engineer-Sound-Design-LLM/releases/tag/v0.0.2): Project releases, including custom TensorFlow wheels.
+16. [LangChain.js GitHub Repository](https://github.com/langchain-ai/langchainjs): JavaScript library for building applications with large language models.
