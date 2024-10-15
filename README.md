@@ -23,12 +23,23 @@ We use the following tools for collecting and processing data:
 - [PLWIZ](https://github.com/SomeOrdinaryBro/PLWIZ): For downloading video and Instagram content
 - [transcribe](https://github.com/vivekuppal/transcribe) or [vibe](https://thewh1teagle.github.io/vibe/): For accurate transcription of audio content
 
-## Models
+## Models and Libraries
 
-We incorporate the following models for reasoning and tokenization:
+We incorporate the following models and libraries for reasoning, tokenization, and deployment:
 
-- LLaMA: A large language model for advanced reasoning tasks
-- DistilBERT: A lightweight BERT model for efficient tokenization and processing
+- [DistilBERT](https://huggingface.co/docs/transformers/model_doc/distilbert): A lightweight BERT model for efficient tokenization and processing
+- [LLaMA](https://github.com/facebookresearch/llama): A large language model for advanced reasoning tasks
+- [TensorFlow.js](https://www.tensorflow.org/js): For deploying and running the model in JavaScript environments
+
+## CPU Optimization
+
+We use a custom-compiled wheel with AVX2 and FMA enabled for CPU optimization during training. This wheel is compatible with Python 3.9, which is currently the most compatible Python version for machine learning and deep learning technologies.
+
+To use the optimized wheel:
+
+1. Ensure you have Python 3.9 installed
+2. Install the `wheel` package: `pip install wheel`
+3. Install the custom wheel (located in the `wheels/` directory)
 
 ## Contributing
 
