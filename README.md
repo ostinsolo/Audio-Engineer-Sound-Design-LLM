@@ -24,6 +24,7 @@ This repository contains resources and code for developing a Language Learning M
 9. [Dataset Preparation and DistilBERT Training Example](#dataset-preparation-and-distilbert-training-example)
    - [Using Ollama with QA-DistillBert](#using-ollama-with-qa-distillbert)
    - [Key Aspects of QA-DistillBert](#key-aspects-of-qa-distillbert)
+   - [Automated Question Correction using RAG](#automated-question-correction-using-rag)
 10. [Contributing](#contributing)
 11. [License](#license)
 12. [References](#references)
@@ -441,6 +442,114 @@ To utilize the QA-DistillBert example, follow these steps:
 5. **Performance Evaluation:**
    - Comparing the fine-tuned model against pre-trained models on a holdout test set.
    - Demonstrating significant improvements in performance metrics after fine-tuning.
+
+### Automated Question Correction using RAG
+
+To further improve the quality of our dataset and reduce manual review, we implemented an additional layer using Retrieval Augmented Generation (RAG) with a local LLM. This step automatically corrects filtered questions that were initially deemed irrelevant or low-quality.
+
+We have implemented two methods for this RAG system:
+
+1. **Custom RAG Implementation using LangChain and LLaMA**:
+
+   This method uses LangChain with a local LLaMA model to create a custom RAG system.
+
+   ```python
+   from langchain import PromptTemplate, LLMChain
+   from langchain.llms import LlamaCpp
+   from langchain.embeddings import HuggingFaceEmbeddings
+   from langchain.vectorstores import FAISS
+   from langchain.chains import RetrievalQA
+
+   # Setup RAG system
+   embeddings = HuggingFaceEmbeddings()
+   vector_store = FAISS.from_texts(documents, embeddings)
+   retriever = vector_store.as_retriever()
+
+   llm = LlamaCpp(model_path="path/to/llama/model.bin")
+   qa_chain = RetrievalQA.from_chain_type(llm, retriever=retriever)
+
+   # Function to correct and re-evaluate questions
+   def correct_and_reevaluate_question(question, document):
+       context = qa_chain.run(question)
+       
+       correction_prompt = PromptTemplate(
+           input_variables=["question", "context"],
+           template="Given the context: {context}\n\nImprove or correct this question: {question}"
+       )
+       
+       correction_chain = LLMChain(llm=llm, prompt=correction_prompt)
+       corrected_question = correction_chain.run(question=question, context=context)
+       
+       # Re-evaluate corrected question (implementation depends on your scoring method)
+       new_score = evaluate_relevance(corrected_question, document)
+       
+       return corrected_question, new_score
+
+   # Process filtered questions
+   for question, document in filtered_pairs:
+       corrected_question, new_score = correct_and_reevaluate_question(question, document)
+       if new_score > relevance_threshold:
+           final_dataset.append((corrected_question, document))
+   ```
+
+2. **Using PrivateGPT**:
+
+   This method leverages PrivateGPT, an open-source project that provides a production-ready AI system for asking questions about documents using LLMs, with a focus on privacy and offline capabilities.
+
+   To set up PrivateGPT:
+
+   a. Clone the PrivateGPT repository:
+      ```bash
+      git clone https://github.com/zylon-ai/private-gpt.git
+      cd private-gpt
+      ```
+
+   b. Follow the installation instructions in the PrivateGPT documentation.
+
+   c. Ingest your document corpus into PrivateGPT.
+
+   d. Use PrivateGPT's API to correct and re-evaluate questions:
+
+   ```python
+   import requests
+
+   def correct_and_reevaluate_question_privategpt(question, document):
+       # Assuming PrivateGPT API is running on localhost:8001
+       url = "http://localhost:8001/v1/completions"
+       
+       prompt = f"""Given the context of the following document:
+       {document}
+
+       Improve or correct this question: {question}"""
+
+       payload = {
+           "prompt": prompt,
+           "max_tokens": 100
+       }
+       
+       response = requests.post(url, json=payload)
+       corrected_question = response.json()['choices'][0]['text'].strip()
+       
+       # Re-evaluate corrected question (implementation depends on your scoring method)
+       new_score = evaluate_relevance(corrected_question, document)
+       
+       return corrected_question, new_score
+
+   # Process filtered questions
+   for question, document in filtered_pairs:
+       corrected_question, new_score = correct_and_reevaluate_question_privategpt(question, document)
+       if new_score > relevance_threshold:
+           final_dataset.append((corrected_question, document))
+   ```
+
+Both methods significantly reduce the need for manual review and improve the overall quality of the synthetic queries in our dataset. The choice between these methods depends on specific project requirements, such as privacy concerns, offline capabilities, and integration with existing systems.
+
+After applying one of these automated correction processes, we merge the corrected questions back into the dataset:
+
+```python
+# Merge corrected questions back into the dataset
+df_final = pd.concat([df_final, pd.DataFrame(final_dataset)])
+```
 
 This customized `QA-DistillBert` setup serves as a robust reference for implementing similar QA retrieval systems, showcasing best practices in data preparation, model selection, and fine-tuning techniques, all integrated with Ollama for enhanced performance.
 
