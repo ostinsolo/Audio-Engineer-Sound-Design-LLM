@@ -186,7 +186,7 @@ By following these steps, you can create a custom TensorFlow wheel optimized for
 
 ## TensorFlow Wheel
 
-The custom TensorFlow wheel for this project is too large to be included directly in the repository. You can download it from the [Releases page](https://github.com/your-username/Audio-Engineer-Sound-Design-LLM/releases).
+The custom TensorFlow wheel for this project is too large to be included directly in the repository. You can download it from the [Releases page](https://github.com/ostinsolo/Audio-Engineer-Sound-Design-LLM/releases/tag/v0.0.2).
 
 After downloading, place the wheel file in the `wheel/` directory of your local repository clone.
 ## Step-by-Step Guide
