@@ -47,7 +47,7 @@ DistilBERT is a smaller, faster, and lighter version of BERT that retains much o
 
 For a more detailed explanation, watch this video on DistilBERT:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/90mGPxR2GgY?si=3Oh3J9FeyY6H438X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![YouTube](http://i.ytimg.com/vi/90mGPxR2GgY/hqdefault.jpg)](https://www.youtube.com/watch?v=90mGPxR2GgY)
 
 ### Visual Representations
 
