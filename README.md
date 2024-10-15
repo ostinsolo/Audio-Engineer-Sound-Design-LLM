@@ -26,6 +26,7 @@ This repository contains resources and code for developing a Language Learning M
    - [Key Aspects of QA-DistillBert](#key-aspects-of-qa-distillbert)
 10. [Contributing](#contributing)
 11. [License](#license)
+12. [References](#references)
 
 ## Project Structure
 
@@ -452,3 +453,22 @@ Contributions are welcome! Please feel free to submit more files but NOT Pull Re
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## References
+
+1. [youtube-subtitles-downloader](https://github.com/eliascotto/youtube-subtitles-downloader)
+2. [PLWIZ](https://github.com/SomeOrdinaryBro/PLWIZ)
+3. [transcribe](https://github.com/vivekuppal/transcribe)
+4. [vibe](https://thewh1teagle.github.io/vibe/)
+5. [DistilBERT - Hugging Face](https://huggingface.co/docs/transformers/model_doc/distilbert)
+6. [Retrieval Augmented Generation (RAG) - Hugging Face](https://huggingface.co/docs/transformers/model_doc/rag)
+7. [LLaMA - Facebook Research](https://github.com/facebookresearch/llama)
+8. [TensorFlow.js](https://www.tensorflow.org/js)
+9. [DistilBERT Explained Video](https://www.youtube.com/watch?v=90mGPxR2GgY)
+10. [RAG Explained Video](https://www.youtube.com/watch?v=rhZgXNdhWDY)
+11. [Hugging Face RAG Documentation](https://huggingface.co/docs/transformers/model_doc/rag)
+12. [RAG Paper](https://arxiv.org/abs/2005.11401)
+13. [Ollama](https://ollama.com)
+14. [TensorFlow GitHub Repository](https://github.com/tensorflow/tensorflow)
+15. [Audio-Engineer-Sound-Design-LLM Releases](https://github.com/ostinsolo/Audio-Engineer-Sound-Design-LLM/releases/tag/v0.0.2)
+16. [LangChain.js GitHub Repository](https://github.com/langchain-ai/langchainjs)
