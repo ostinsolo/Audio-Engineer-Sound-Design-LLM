@@ -280,15 +280,6 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
      ```bash
      python utils/verify_optimization.py
      ```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit more files but NOT Pull Requests.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Dataset Preparation and DistilBERT Training Example
 
 For an excellent example of how to prepare a dataset and train DistilBERT for a Question-Answering (QA) Retrieval System, we can look at the project by Dennis van Dang. This project demonstrates a comprehensive approach to developing a QA system using fine-tuned DistilBERT models.
@@ -317,3 +308,12 @@ Key aspects of the project include:
 This project serves as an excellent reference for implementing similar QA retrieval systems, showcasing best practices in data preparation, model selection, and fine-tuning techniques.
 
 For more details, you can explore the [QA-Retrieval-System repository](https://github.com/dennisvdang/QA-Retrieval-System/tree/main) on GitHub.
+## Contributing
+
+Contributions are welcome! Please feel free to submit more files but NOT Pull Requests.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
