@@ -11,23 +11,25 @@ This repository contains resources and code for developing a Language Learning M
    - [How DistilBERT Works](#how-distilbert-works)
    - [Retrieval Augmented Generation (RAG)](#retrieval-augmented-generation-rag)
    - [Visual Representations](#visual-representations)
-5. [CPU Optimization](#cpu-optimization)
-6. [Building Optimized TensorFlow Wheel](#building-optimized-tensorflow-wheel)
-7. [TensorFlow Wheel](#tensorflow-wheel)
-8. [Step-by-Step Guide](#step-by-step-guide)
+5. [Projects to Watch and Learn From](#projects-to-watch-and-learn-from)
+   - [Understanding ONNX and Its Benefits](#understanding-onnx-and-its-benefits)
+6. [CPU Optimization](#cpu-optimization)
+7. [Building Optimized TensorFlow Wheel](#building-optimized-tensorflow-wheel)
+8. [TensorFlow Wheel](#tensorflow-wheel)
+9. [Step-by-Step Guide](#step-by-step-guide)
    - [Data Collection](#1-data-collection)
    - [Transcription](#2-transcription)
    - [Dataset Preparation](#3-dataset-preparation)
    - [Model Training](#4-model-training)
    - [Deployment](#5-deployment)
    - [CPU Optimization](#6-cpu-optimization)
-9. [Dataset Preparation and DistilBERT Training Example](#dataset-preparation-and-distilbert-training-example)
-   - [Using Ollama with QA-DistillBert](#using-ollama-with-qa-distillbert)
-   - [Key Aspects of QA-DistillBert](#key-aspects-of-qa-distillbert)
-   - [Automated Question Correction using RAG](#automated-question-correction-using-rag)
-10. [Contributing](#contributing)
-11. [License](#license)
-12. [References](#references)
+10. [Dataset Preparation and DistilBERT Training Example](#dataset-preparation-and-distilbert-training-example)
+    - [Using Ollama with QA-DistillBert](#using-ollama-with-qa-distillbert)
+    - [Key Aspects of QA-DistillBert](#key-aspects-of-qa-distillbert)
+    - [Automated Question Correction using RAG](#automated-question-correction-using-rag)
+11. [Contributing](#contributing)
+12. [License](#license)
+13. [References](#references)
 
 ## Project Structure
 
@@ -127,6 +129,46 @@ This image demonstrates how words are converted into numerical representations (
 This image compares the architecture and approach of BERT-based models (like DistilBERT) with GPT and LLaMA models, highlighting their differences in structure and application.
 
 These visual aids help in grasping the complex structure and operations of transformer-based models like DistilBERT, as well as understanding how they compare to other popular language models.
+
+## Projects to Watch and Learn From
+
+As we develop our Audio-Engineer-Sound-Design-LLM, it's valuable to study and learn from similar projects that have successfully implemented and optimized question-answering models. Here are two noteworthy projects:
+
+1. [multi-qa-MiniLM-distill-onnx-L6-cos-v1](https://huggingface.co/rawsh/multi-qa-MiniLM-distill-onnx-L6-cos-v1/tree/main): This project showcases a distilled version of MiniLM optimized for question-answering tasks and converted to ONNX format for improved inference performance.
+
+2. [multi-qa-distilbert-cos-v1-onnx](https://huggingface.co/onnx-models/multi-qa-distilbert-cos-v1-onnx): This is an ONNX-ported version of the DistilBERT model fine-tuned for question-answering tasks, demonstrating how to optimize larger models for deployment.
+
+### Understanding ONNX and Its Benefits
+
+ONNX (Open Neural Network Exchange) is an open format designed to represent machine learning models. It defines a common set of operators and a common file format to enable AI developers to use models with a variety of frameworks, tools, runtimes, and compilers.
+
+#### Why ONNX can be useful for our project:
+
+1. **Improved Inference Time**: ONNX Runtime can significantly speed up model inference, which is crucial for real-time audio processing and question-answering tasks.
+
+2. **Cross-Platform Compatibility**: ONNX models can be run on various hardware and operating systems, making our Audio-Engineer-Sound-Design-LLM more versatile and deployable across different environments.
+
+3. **Optimization**: ONNX Runtime includes various optimization techniques that can automatically improve model performance without changing the model's architecture.
+
+4. **Quantization**: ONNX supports model quantization, which can reduce model size and improve inference speed with minimal impact on accuracy. This is particularly useful for deploying models on edge devices or in resource-constrained environments.
+
+5. **Integration with Hardware Accelerators**: ONNX models can easily leverage hardware accelerators like GPUs, TPUs, and specialized AI chips, potentially boosting performance for audio processing tasks.
+
+#### Implementing ONNX in Our Project
+
+To leverage ONNX in our Audio-Engineer-Sound-Design-LLM project, we can follow these steps:
+
+1. **Convert to ONNX**: After training our DistilBERT or custom model, convert it to ONNX format using tools like `torch.onnx`.
+
+2. **Optimize with ONNX Runtime**: Use ONNX Runtime to apply automatic optimizations to our model.
+
+3. **Quantize if Necessary**: If deployment size or speed is a concern, apply quantization techniques to reduce model size while maintaining accuracy.
+
+4. **Benchmark and Compare**: Test the ONNX model against our original model to measure improvements in inference time and resource usage.
+
+By incorporating ONNX into our project, we can potentially achieve faster inference times, which is crucial for real-time audio processing and quick responses in our question-answering system. This optimization can lead to a more responsive and efficient Audio-Engineer-Sound-Design-LLM.
+
+For more information on implementing ONNX in your projects, refer to the [ONNX official documentation](https://onnx.ai/get-started.html).
 
 ## CPU Optimization
 
@@ -581,3 +623,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 14. [TensorFlow GitHub Repository](https://github.com/tensorflow/tensorflow): Source code for TensorFlow, used in building optimized wheels.
 15. [Audio-Engineer-Sound-Design-LLM Releases](https://github.com/ostinsolo/Audio-Engineer-Sound-Design-LLM/releases/tag/v0.0.2): Project releases, including custom TensorFlow wheels.
 16. [LangChain.js GitHub Repository](https://github.com/langchain-ai/langchainjs): JavaScript library for building applications with large language models.
+
