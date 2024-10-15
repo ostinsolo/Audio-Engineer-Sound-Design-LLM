@@ -65,7 +65,13 @@ This image illustrates the overall architecture of a transformer model, showing 
 
 This image demonstrates how words are converted into numerical representations (embeddings) that can be processed by the model.
 
-These visual aids help in grasping the complex structure and operations of transformer-based models like DistilBERT.
+3. **BERT vs GPT/LLaMA**
+
+![BERT vs GPT/LLaMA](BERT%20vs%20GPT_LLaMA.png)
+
+This image compares the architecture and approach of BERT-based models (like DistilBERT) with GPT and LLaMA models, highlighting their differences in structure and application.
+
+These visual aids help in grasping the complex structure and operations of transformer-based models like DistilBERT, as well as understanding how they compare to other popular language models.
 
 ## CPU Optimization
 
