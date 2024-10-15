@@ -103,7 +103,7 @@ These visual aids help in grasping the complex structure and operations of trans
 
 ## CPU Optimization
 
-We use a custom-compiled wheel with AVX2 and FMA enabled for CPU optimization during training. This wheel is compatible with Python 3.11, usually we will use 3.9 which is currently the most compatible Python version for machine learning and deep learning technologies.
+For CPU optimization during training, we employ a custom-compiled wheel that leverages AVX2 and FMA instructions. This optimized wheel is designed to work seamlessly with Python 3.11, although Python 3.9 is the most commonly used version for machine learning and deep learning applications due to its broad compatibility.
 
 To use the optimized wheel:
 
@@ -111,6 +111,84 @@ To use the optimized wheel:
 2. Install the `wheel` package: `pip install wheel`
 3. Install the custom wheel (located in the `wheels/` directory)
 
+## Building Optimized TensorFlow Wheel
+
+To optimize TensorFlow for your specific CPU architecture and Python version, you can build a custom wheel. This process allows you to enable specific CPU instructions like AVX, AVX2, and FMA for improved performance. Follow these steps to build an optimized TensorFlow wheel:
+
+### Prerequisites
+
+- Bazel build system
+- Python development environment
+- Git
+
+### Steps to Build
+
+1. **Clone TensorFlow Repository:**
+   ```bash
+   git clone https://github.com/tensorflow/tensorflow.git
+   cd tensorflow
+   git checkout v2.17.0
+   ```
+
+2. **Configure Build:**
+   Run the configuration script and answer the prompts. When asked about optimization flags, use:
+   ```
+   -march=native -mavx -mavx2 -mfma 
+   ```
+
+3. **Build the Wheel:**
+   Use the following extensive command for compilation with specific optimizations:
+
+   ```bash
+   bazel build --config=opt \
+     --copt=-march=skylake \
+     --copt=-mtune=skylake \
+     --copt=-mavx \
+     --copt=-mavx2 \
+     --copt=-mfma \
+     --copt=-msse4.2 \
+     --copt=-mpopcnt \
+     --copt=-maes \
+     --copt=-mf16c \
+     --copt=-Wno-error=unknown-warning-option \
+     --define=no_tensorflow_py_deps=true \
+     --define=xnn_enable_avxvnniint8=false \
+     --define=with_cuda=false \
+     --define=with_rocm=false \
+     --define=with_xla_support=false \
+     //tensorflow/tools/pip_package:wheel \
+     --repo_env=WHEEL_NAME=tensorflow_cpu \
+     --verbose_failures
+   ```
+
+   This command builds a CPU-only version of TensorFlow with optimizations for Skylake architecture and includes AVX, AVX2, and FMA instructions.
+
+4. **Create the Wheel:**
+   After the build completes, create the wheel file:
+   ```bash
+   ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+   ```
+
+5. **Install the Wheel:**
+   Install the created wheel for your Python environment:
+   ```bash
+   pip install /tmp/tensorflow_pkg/tensorflow-version-tags.whl
+   ```
+
+### Notes
+
+- Replace `skylake` with your specific CPU architecture if different.
+- Adjust the TensorFlow version (`v2.17.0`) as needed for your project requirements.
+- Building TensorFlow can take a significant amount of time and computational resources.
+- Ensure your system meets the hardware requirements for the specified optimizations.
+
+By following these steps, you can create a custom TensorFlow wheel optimized for your specific CPU architecture and Python version, potentially improving performance for your audio engineering and sound design LLM project.
+
+## TensorFlow Wheel
+
+The custom TensorFlow wheel for this project is too large to be included directly in the repository. You can download it from the [Releases page](https://github.com/your-username/Audio-Engineer-Sound-Design-LLM/releases).
+
+After downloading, place the wheel file in the `wheel/` directory of your local repository clone.
 ## Step-by-Step Guide
 
 Follow this guide to set up the project, collect data, prepare the dataset, train the model, and deploy it.
@@ -315,5 +393,4 @@ Contributions are welcome! Please feel free to submit more files but NOT Pull Re
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
 
