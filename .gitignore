@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data
+*.csv
+*.json
+*.txt
+*.wav
+*.mp3
+
+# Model checkpoints
+*.pth
+*.h5
+*.ckpt
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
