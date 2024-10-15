@@ -28,6 +28,7 @@ We use the following tools for collecting and processing data:
 We incorporate the following models and libraries for reasoning, tokenization, and deployment:
 
 - [DistilBERT](https://huggingface.co/docs/transformers/model_doc/distilbert): A lightweight BERT model for efficient tokenization and processing
+- [Retrieval Augmented Generation (RAG)](https://huggingface.co/docs/transformers/model_doc/rag): A framework that combines retrieval-based methods with generative models to enhance response accuracy and context relevance
 - [LLaMA](https://github.com/facebookresearch/llama): A large language model for advanced reasoning tasks
 - [TensorFlow.js](https://www.tensorflow.org/js): For deploying and running the model in JavaScript environments
 
@@ -48,6 +49,33 @@ DistilBERT is a smaller, faster, and lighter version of BERT that retains much o
 For a more detailed explanation, watch this video on DistilBERT:
 
 [![YouTube](http://i.ytimg.com/vi/90mGPxR2GgY/hqdefault.jpg)](https://www.youtube.com/watch?v=90mGPxR2GgY)
+
+### Retrieval Augmented Generation (RAG)
+
+Retrieval Augmented Generation (RAG) combines retrieval-based methods with generative models to enhance the model's ability to generate accurate and contextually relevant responses. By fetching relevant documents or data snippets during the generation process, RAG improves the quality and factual accuracy of the output.
+
+#### Key Features of RAG:
+
+1. **Dual Components**: RAG consists of a retriever and a generator. The retriever fetches relevant documents from a large corpus based on the input query, and the generator uses these documents to produce a coherent and accurate response.
+
+2. **Enhanced Knowledge Utilization**: By integrating external information, RAG overcomes the limitations of models that rely solely on their pre-trained knowledge, allowing them to provide up-to-date and specific information.
+
+3. **Improved Accuracy**: The retrieval mechanism ensures that the generated responses are grounded in actual data, reducing the occurrence of hallucinations and increasing the reliability of the answers.
+
+4. **Flexibility**: RAG can be adapted to various domains by modifying the retrieval corpus, making it suitable for specialized applications like audio engineering, sound design, and music production.
+
+#### Implementation in This Project:
+
+In this project, we use RAG to enhance the LLM's ability to answer complex and specific questions related to audio engineering and sound design. The retrieval component accesses a curated dataset of audio engineering manuals, tutorials, and relevant documentation, while the generation component constructs accurate and informative responses.
+
+For a deeper understanding, watch this video on RAG:
+
+[![YouTube](http://i.ytimg.com/vi/rhZgXNdhWDY/hqdefault.jpg)](https://www.youtube.com/watch?v=rhZgXNdhWDY)
+
+#### Resources:
+
+- [Hugging Face RAG Documentation](https://huggingface.co/docs/transformers/model_doc/rag): Comprehensive guide on implementing and using RAG models.
+- [RAG Paper](https://arxiv.org/abs/2005.11401): Original paper introducing RAG and its methodologies.
 
 ### Visual Representations
 
@@ -182,7 +210,7 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
      # Save the labeled dataset
      transcripts.to_csv('labeled_transcripts.csv', index=False)
      ````
-
+   
    - **Usage:**
      - Navigate to the `dataset_preparation/` directory and run the script:
        ```bash
@@ -255,7 +283,7 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit more file but NOT Pull Request.
+Contributions are welcome! Please feel free to submit more files but NOT Pull Requests.
 
 ## License
 
