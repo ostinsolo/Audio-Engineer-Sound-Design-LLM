@@ -2,6 +2,31 @@
 
 This repository contains resources and code for developing a Language Learning Model (LLM) focused on audio engineering, sound design, and music production. The project aims to collect relevant data, prepare datasets, and fine-tune a model capable of answering various musical and audio-related questions.
 
+## Table of Contents
+
+1. [Project Structure](#project-structure)
+2. [Getting Started](#getting-started)
+3. [Data Collection Tools](#data-collection-tools)
+4. [Models and Libraries](#models-and-libraries)
+   - [How DistilBERT Works](#how-distilbert-works)
+   - [Retrieval Augmented Generation (RAG)](#retrieval-augmented-generation-rag)
+   - [Visual Representations](#visual-representations)
+5. [CPU Optimization](#cpu-optimization)
+6. [Building Optimized TensorFlow Wheel](#building-optimized-tensorflow-wheel)
+7. [TensorFlow Wheel](#tensorflow-wheel)
+8. [Step-by-Step Guide](#step-by-step-guide)
+   - [Data Collection](#1-data-collection)
+   - [Transcription](#2-transcription)
+   - [Dataset Preparation](#3-dataset-preparation)
+   - [Model Training](#4-model-training)
+   - [Deployment](#5-deployment)
+   - [CPU Optimization](#6-cpu-optimization)
+9. [Dataset Preparation and DistilBERT Training Example](#dataset-preparation-and-distilbert-training-example)
+   - [Using Ollama with QA-DistillBert](#using-ollama-with-qa-distillbert)
+   - [Key Aspects of QA-DistillBert](#key-aspects-of-qa-distillbert)
+10. [Contributing](#contributing)
+11. [License](#license)
+
 ## Project Structure
 
 - `data_collection/`: Scripts for collecting audio transcripts and manuals
