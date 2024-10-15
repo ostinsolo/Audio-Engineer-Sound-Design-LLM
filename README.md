@@ -288,3 +288,32 @@ Contributions are welcome! Please feel free to submit more files but NOT Pull Re
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Dataset Preparation and DistilBERT Training Example
+
+For an excellent example of how to prepare a dataset and train DistilBERT for a Question-Answering (QA) Retrieval System, we can look at the project by Dennis van Dang. This project demonstrates a comprehensive approach to developing a QA system using fine-tuned DistilBERT models.
+
+Key aspects of the project include:
+
+1. **Data Preparation:**
+   - Converting tabular data into human-readable text documents.
+   - Generating synthetic queries using a large language model (LLaMA) to create a diverse set of questions based on the document information.
+
+2. **Model Selection and Evaluation:**
+   - Evaluating pre-trained embedding models from Hugging Face, including `multi-qa-distilbert-cos-v1`.
+   - Using statistical tests (Levene's test, Friedman test, Nemenyi post-hoc tests) to compare model performance across different question types.
+
+3. **Hyperparameter Tuning:**
+   - Employing Bayesian optimization to find optimal hyperparameters for fine-tuning the DistilBERT model.
+
+4. **Fine-tuning Process:**
+   - Fine-tuning the `multi-qa-distilbert-cos-v1` model using the `MultipleNegativesRankingLoss` function.
+   - Monitoring various performance metrics during the training process.
+
+5. **Performance Evaluation:**
+   - Comparing the fine-tuned model against pre-trained models on a holdout test set.
+   - Demonstrating significant improvements in performance metrics after fine-tuning.
+
+This project serves as an excellent reference for implementing similar QA retrieval systems, showcasing best practices in data preparation, model selection, and fine-tuning techniques.
+
+For more details, you can explore the [QA-Retrieval-System repository](https://github.com/dennisvdang/QA-Retrieval-System/tree/main) on GitHub.
