@@ -31,6 +31,22 @@ We incorporate the following models and libraries for reasoning, tokenization, a
 - [LLaMA](https://github.com/facebookresearch/llama): A large language model for advanced reasoning tasks
 - [TensorFlow.js](https://www.tensorflow.org/js): For deploying and running the model in JavaScript environments
 
+### How DistilBERT Works
+
+DistilBERT is a smaller, faster, and lighter version of BERT that retains much of the original model's performance. Here's a simple explanation of how it works:
+
+1. **Knowledge Distillation**: DistilBERT is trained using a process called knowledge distillation, where a smaller model (the student) learns to mimic a larger model (the teacher, in this case, BERT).
+
+2. **Reduced Architecture**: It has fewer layers (6 instead of 12 in BERT) and fewer attention heads, resulting in a model that's about 40% smaller and 60% faster.
+
+3. **Preserved Performance**: Despite its reduced size, DistilBERT retains about 97% of BERT's language understanding capabilities.
+
+4. **Efficient Tokenization**: It uses the same tokenization process as BERT, allowing for efficient processing of text input.
+
+5. **Fine-tuning**: Like BERT, DistilBERT can be fine-tuned for specific tasks such as classification, named entity recognition, or question answering.
+
+For a more detailed explanation, check out this [video on DistilBERT](https://www.youtube.com/watch?v=90mGPxR2GgY).
+
 ## CPU Optimization
 
 We use a custom-compiled wheel with AVX2 and FMA enabled for CPU optimization during training. This wheel is compatible with Python 3.9, which is currently the most compatible Python version for machine learning and deep learning technologies.
