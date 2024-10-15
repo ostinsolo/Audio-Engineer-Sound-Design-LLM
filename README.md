@@ -103,7 +103,7 @@ These visual aids help in grasping the complex structure and operations of trans
 
 ## CPU Optimization
 
-We use a custom-compiled wheel with AVX2 and FMA enabled for CPU optimization during training. This wheel is compatible with Python 3.9, which is currently the most compatible Python version for machine learning and deep learning technologies.
+We use a custom-compiled wheel with AVX2 and FMA enabled for CPU optimization during training. This wheel is compatible with Python 3.11, usually we will use 3.9 which is currently the most compatible Python version for machine learning and deep learning technologies.
 
 To use the optimized wheel:
 
