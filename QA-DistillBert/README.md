@@ -1,6 +1,6 @@
 # QA Information Retrieval System using Fine-Tuned DistilBERT
 
-![MRR Test](images/accuracy_test_plot.png)
+
 
 ## Project Overview
 
@@ -22,7 +22,6 @@ Below, you'll find information on where to locate specific files:
   - [`Capstone_3_Presentation.pdf`](docs/Capstone_3_Presentation.pdf): A PDF version of the capstone project presentation slides.
   - [`Project Proposal.docx`](docs/Project_Proposal.docx): The initial project proposal document, outlining the project's objectives and intended deliverables.
 
-- [`images/`](images/): The "images" folder contains various plots and charts generated throughout the project.
 
 Feel free to explore these resources to gain a deeper understanding of the project's implementation, findings, and deliverables.
 
@@ -78,16 +77,8 @@ To compare the performance of the pre-trained embedding models across different 
 
 The overall trend showed that the `multi-qa-distilbert-cos-v1` model performed equally as high, if not the highest, in terms of Mean Reciprocal Rank (MRR), followed by the other question-answering model, `multi-qa-mpnet-base-dot-v1`. The generalized model, `all-mpnet-base-v2`, performed the worst. Consequently, the `multi-qa-distilbert-cos-v1` model was selected for fine-tuning due to its superior performance across most question types.
 
-**Distribution of RR scores for the three models across question types**
-![Boxplot Visualization](images/boxplot.png)
 
-**MRR and SE for the three models across question types (only significant differences shown)**
-![Bar Chart Array](images/bar_chart_array_type.png)
-![Bar Chart Applications](images/bar_chart_applications.png)
-![Bar Chart Compatibility](images/bar_chart_compatibility.png)
-![Bar Chart Stock](images/bar_chart_stock.png)
-![Bar Chart System Manufacturer](images/bar_chart_systems_manufacturer.png)
-![Bar Chart System Compatibility](images/bar_chart_systems_compatibility.png)
+
 
 ### Bayesian Optimization
 
@@ -97,21 +88,11 @@ Bayesian optimization was employed to find the optimal hyperparameters for fine-
 
 The `multi-qa-distilbert-cos-v1` model was fine-tuned using the best hyperparameters obtained from Bayesian optimization. The `MultipleNegativesRankingLoss` function was used as the loss function, which encourages the model to assign higher probabilities to relevant documents and lower probabilities to irrelevant ones. Various performance metrics, such as accuracy, recall, MRR, and NDCG (Normalized Discounted Cumulative Gain), were observed over the training process lasting 4 epochs.
 
-![Validation Accuracy](images/val_accuracy.png)
-![Validation Recall](images/val_recall.png)
-![Validation NDCG MRR](images/val_ndcg_mrr.png)
-
 ### Model Performance and Comparison
 
 The fine-tuned DistilBERT model was evaluated on a holdout test set and compared against three other pre-trained models: `multi-qa-distilbert-cos-v1`, `multi-qa-mpnet-base-dot-v1`, and `all-mpnet-base-v2`. The fine-tuned model consistently outperformed the other models across all performance metrics, demonstrating the effectiveness of the fine-tuning process and the model's ability to adapt to the specific domain and characteristics of the company's data.
 
-**Performance metrics for the fine-tuned model and the three pre-trained models on holdout test set**
-![Table](images/results_table.png)
 
-![Accuracy Test](images/accuracy_test_plot.png)
-![Recall Test](images/recall_test_plot.png)
-![MRR Test](images/mrr_test_plot.png)
-![NDCG Test](images/ndcg_test_plot.png)
 
 ## Conclusion
 
