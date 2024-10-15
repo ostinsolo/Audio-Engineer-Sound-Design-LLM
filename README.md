@@ -145,9 +145,55 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
      └── test/
      ```
 
-3. **Classification (Optional):**
-   - If needed, classify data into different categories such as topic, difficulty, or genre.
-   - Use scripts in `dataset_preparation/` for automated classification.
+3. **Classification and Labeling:**
+   
+   **a. Define Labels:**
+   - Determine the categories or topics relevant to your audio engineering and sound design context (e.g., mixing, mastering, sound synthesis).
+   
+   **b. Automatic Labeling with DistilBERT:**
+   - Utilize DistilBERT to automate the classification of transcripts into predefined labels.
+   - **Setup:**
+     - Ensure you have the `transformers` library installed:
+       ```bash
+       pip install transformers
+       ```
+   
+   - **Example Script:**
+     - Create a script named `label_dataset.py` in the `dataset_preparation/` directory.
+     
+     ````language:dataset_preparation/label_dataset.py
+     from transformers import pipeline
+     import pandas as pd
+
+     # Initialize the DistilBERT classifier
+     classifier = pipeline('text-classification', model='distilbert-base-uncased-finetuned-sst-2-english')
+
+     # Load the transcript data
+     transcripts = pd.read_csv('transcripts.csv')
+
+     # Define a function to classify each transcript
+     def classify_text(text):
+         result = classifier(text[:512])[0]  # Truncate to 512 tokens if necessary
+         return result['label']
+
+     # Apply classification
+     transcripts['label'] = transcripts['text'].apply(classify_text)
+
+     # Save the labeled dataset
+     transcripts.to_csv('labeled_transcripts.csv', index=False)
+     ````
+
+   - **Usage:**
+     - Navigate to the `dataset_preparation/` directory and run the script:
+       ```bash
+       python label_dataset.py
+       ```
+
+   **c. Export to CSV:**
+   - Ensure that the labeled data is saved in a CSV format (`labeled_transcripts.csv`) for easy integration with the training pipeline.
+
+   **d. Automate the Process:**
+   - To make the labeling process as automatic as possible, consider integrating the labeling script into your data pipeline or using scheduling tools to process new transcripts as they become available.
 
 ### 4. Model Training
 
@@ -157,14 +203,14 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
 
 1. **Configure Training Parameters:**
    - Set parameters like learning rate, batch size, and number of epochs in the training scripts.
-
+   
 2. **Train the Model:**
    - Use the prepared dataset to train the LLM.
    - Example command:
      ```bash
      python model/train.py --config model/config.yaml
      ```
-
+   
 3. **Fine-Tune the Model:**
    - Adjust the model based on validation performance to improve accuracy.
 
@@ -182,7 +228,7 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
      ```bash
      tensorflowjs_converter --input_format=tf_saved_model model/exported_model/ model/tfjs_model/
      ```
-
+   
 2. **Integrate with JavaScript Application:**
    - Use TensorFlow.js to load and run the model in a web environment.
    - Example code snippet:
@@ -200,7 +246,7 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
      ```bash
      pip install wheels/custom_wheel.whl
      ```
-
+   
 2. **Verify Installation:**
    - Run a test script to ensure the optimized wheel is functioning correctly.
      ```bash
