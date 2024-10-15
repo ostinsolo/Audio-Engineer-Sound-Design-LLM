@@ -203,7 +203,7 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit more file but NOT Pull Request.
 
 ## License
 
