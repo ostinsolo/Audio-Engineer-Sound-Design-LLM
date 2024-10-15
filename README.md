@@ -189,6 +189,7 @@ By following these steps, you can create a custom TensorFlow wheel optimized for
 The custom TensorFlow wheel for this project is too large to be included directly in the repository. You can download it from the [Releases page](https://github.com/ostinsolo/Audio-Engineer-Sound-Design-LLM/releases/tag/v0.0.2).
 
 After downloading, place the wheel file in the `wheel/` directory of your local repository clone.
+
 ## Step-by-Step Guide
 
 Follow this guide to set up the project, collect data, prepare the dataset, train the model, and deploy it.
@@ -208,7 +209,7 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
      ```bash
      youtube-subtitles-downloader --url "https://www.youtube.com/watch?v=example" --output data_collection/subtitles/
      ```
-   
+
 2. **Download Videos and Instagram Content:**
    - Use `PLWIZ` to download video content from YouTube and Instagram.
    - Example command:
@@ -240,7 +241,7 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
 1. **Preprocess Transcripts:**
    - Clean and format the transcription data.
    - Remove any unnecessary noise or artifacts from the text.
-   
+
 2. **Organize Data:**
    - Structure the data into training, validation, and testing sets.
    - Example:
@@ -267,7 +268,7 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
    - **Example Script:**
      - Create a script named `label_dataset.py` in the `dataset_preparation/` directory.
      
-     ````language:dataset_preparation/label_dataset.py
+     `````language:dataset_preparation/label_dataset.py
      from transformers import pipeline
      import pandas as pd
 
@@ -309,7 +310,7 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
 
 1. **Configure Training Parameters:**
    - Set parameters like learning rate, batch size, and number of epochs in the training scripts.
-   
+
 2. **Train the Model:**
    - Use the prepared dataset to train the LLM.
    - Example command:
@@ -358,15 +359,47 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
      ```bash
      python utils/verify_optimization.py
      ```
+
 ## Dataset Preparation and DistilBERT Training Example
 
-For an excellent example of how to prepare a dataset and train DistilBERT for a Question-Answering (QA) Retrieval System, we can look at the project by Dennis van Dang. This project demonstrates a comprehensive approach to developing a QA system using fine-tuned DistilBERT models.
+For an excellent example of how to prepare a dataset and train DistilBERT for a Question-Answering (QA) Retrieval System, we have created a customized setup in the `QA-DistillBert` folder. This setup demonstrates a comprehensive approach to developing a QA system using fine-tuned DistilBERT models integrated with Ollama.
 
-Key aspects of the project include:
+### Using Ollama with QA-DistillBert
+
+To utilize the QA-DistillBert example, follow these steps:
+
+1. **Install Ollama:**
+   - Visit [Ollama.com](https://ollama.com) to download and install Ollama for your operating system.
+
+2. **Run the LLaMA Model:**
+   - Open your terminal and execute the following command to run LLaMA:
+     ```bash
+     ollama run llama3.2
+     ```
+
+3. **Start Ollama Server:**
+   - After running the model, close the Ollama application from the top menu bar on your Mac.
+   - Then, start the Ollama server by running:
+     ```bash
+     ollama serve
+     ```
+
+4. **Navigate to QA-DistillBert Folder:**
+   - Instead of using the external GitHub repository, we have created our own `QA-DistillBert` folder with updates and custom configurations.
+   - Navigate to the `QA-DistillBert` directory:
+     ```bash
+     cd QA-DistillBert
+     ```
+
+5. **Follow the Customized Instructions:**
+   - Inside the `QA-DistillBert` folder, you will find updated scripts and configurations tailored to work seamlessly with Ollama and our project's specific requirements.
+   - Refer to the README.md inside the `QA-DistillBert` folder for detailed instructions on dataset preparation, model training, and deployment.
+
+### Key Aspects of QA-DistillBert:
 
 1. **Data Preparation:**
    - Converting tabular data into human-readable text documents.
-   - Generating synthetic queries using a large language model (LLaMA) to create a diverse set of questions based on the document information.
+   - Generating synthetic queries using Ollama's LLaMA model to create a diverse set of questions based on the document information.
 
 2. **Model Selection and Evaluation:**
    - Evaluating pre-trained embedding models from Hugging Face, including `multi-qa-distilbert-cos-v1`.
@@ -383,9 +416,10 @@ Key aspects of the project include:
    - Comparing the fine-tuned model against pre-trained models on a holdout test set.
    - Demonstrating significant improvements in performance metrics after fine-tuning.
 
-This project serves as an excellent reference for implementing similar QA retrieval systems, showcasing best practices in data preparation, model selection, and fine-tuning techniques.
+This customized `QA-DistillBert` setup serves as a robust reference for implementing similar QA retrieval systems, showcasing best practices in data preparation, model selection, and fine-tuning techniques, all integrated with Ollama for enhanced performance.
 
-For more details, you can explore the [QA-Retrieval-System repository](https://github.com/dennisvdang/QA-Retrieval-System/tree/main) on GitHub.
+For more details, explore the `QA-DistillBert` folder within this repository.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit more files but NOT Pull Requests.
@@ -393,4 +427,3 @@ Contributions are welcome! Please feel free to submit more files but NOT Pull Re
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-

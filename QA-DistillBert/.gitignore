@@ -1,0 +1,24 @@
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore brainstorming notebooks
+notebooks/sql_qa_test.ipynb
+notebooks/sqlQA.ipynb
+notebooks/qa_dataset_generation.ipynb
+notebooks/config.ini
+
+# Ignore directories containing models
+models/
+checkpoints/
+saved_models/
+
+# Ignore scrap csv files
+data/results/
+data/corrected_questions.csv
+data/filtered_questions_for_correction.csv
+data/qa_dataset.csv
+data/sampled_data_for_review.csv
+data/sampled_data_scored.csv
+data/scored_raw.csv
+data/SQL/
+src/
