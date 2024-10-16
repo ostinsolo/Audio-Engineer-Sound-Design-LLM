@@ -1,0 +1,54 @@
+# AI-Generated Ableton Live Voice Commands
+
+This project aims to generate a dataset of natural language utterances and corresponding action sequences for controlling Ableton Live using voice commands. The generated data can be used to train a machine learning model for voice-controlled music production.
+
+## Project Overview
+
+The main components of this project are:
+
+1. **Data Generation**: Using AI to create diverse and realistic voice command utterances and their corresponding action sequences in Ableton Live.
+2. **Data Processing**: Converting the generated data into a format suitable for machine learning models.
+3. **Ableton Live Integration**: Utilizing Ableton Live's data structures and actions to ensure the generated commands are relevant and executable.
+
+## Key Files
+
+- `auto_utterance_action.ipynb`: Jupyter notebook containing the main logic for generating utterances and action sequences.
+- `ableton_data.py`: Contains structured data about Ableton Live, including audio effects, instruments, actions, and templates.
+- `create_csv_from_ai_output.py`: Script to convert the generated data into a CSV file for further processing or model training.
+- `requirements_for_ai_gen.txt`: List of Python packages required for this project.
+
+## How It Works
+
+1. The system uses a language model (Ollama LLM) to generate natural language utterances based on Ableton Live's structure and capabilities.
+2. For each utterance, a corresponding action sequence is generated, representing the steps needed to execute the command in Ableton Live.
+3. The generated data is then processed and saved to a CSV file, which can be used for training a machine learning model.
+
+## Usage
+
+1. Ensure all required packages are installed: `pip install -r requirements_for_ai_gen.txt`
+2. Run the `auto_utterance_action.ipynb` notebook to generate the dataset.
+3. The resulting CSV file (`ableton_utterances_and_actions.csv`) will contain the generated utterances and their corresponding action sequences.
+
+## Development Status
+
+**Important Note:** This system is currently under active development and has not been thoroughly tested yet. We welcome contributions and testing to identify and resolve potential errors or inconsistencies in the generated data.
+
+## Future Development
+
+This dataset can be used to train a machine learning model that can interpret natural language commands and convert them into actionable sequences in Ableton Live, enabling voice-controlled music production.
+
+As the project evolves, we aim to:
+1. Improve the accuracy and diversity of generated utterances and actions
+2. Expand the coverage of Ableton Live features
+3. Implement and test the voice command interpretation model
+
+## Contributing
+
+Contributions to improve the data generation process, expand the Ableton Live data structures, or enhance the overall system are welcome. We especially encourage:
+
+- Testing the generated datasets for accuracy and consistency
+- Identifying and reporting any errors or unexpected outputs
+- Suggesting improvements to the data generation algorithms
+- Expanding the Ableton Live data structures to cover more features
+
+Please submit a pull request or open an issue to discuss proposed changes or report any findings from your testing.
