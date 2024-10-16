@@ -4,32 +4,79 @@ This repository contains resources and code for developing a Language Learning M
 
 ## Table of Contents
 
-1. [Project Structure](#project-structure)
-2. [Getting Started](#getting-started)
-3. [Data Collection Tools](#data-collection-tools)
-4. [Models and Libraries](#models-and-libraries)
+1. [Project Overview](#project-overview)
+2. [Model Architectures](#model-architectures)
+3. [Project Structure](#project-structure)
+4. [Getting Started](#getting-started)
+5. [Data Collection Tools](#data-collection-tools)
+6. [Models and Libraries](#models-and-libraries)
    - [How DistilBERT Works](#how-distilbert-works)
    - [Retrieval Augmented Generation (RAG)](#retrieval-augmented-generation-rag)
    - [Visual Representations](#visual-representations)
-5. [Projects to Watch and Learn From](#projects-to-watch-and-learn-from)
+7. [Projects to Watch and Learn From](#projects-to-watch-and-learn-from)
    - [Understanding ONNX and Its Benefits](#understanding-onnx-and-its-benefits)
-6. [CPU Optimization](#cpu-optimization)
-7. [Building Optimized TensorFlow Wheel](#building-optimized-tensorflow-wheel)
-8. [TensorFlow Wheel](#tensorflow-wheel)
-9. [Step-by-Step Guide](#step-by-step-guide)
+8. [CPU Optimization](#cpu-optimization)
+9. [Building Optimized TensorFlow Wheel](#building-optimized-tensorflow-wheel)
+10. [TensorFlow Wheel](#tensorflow-wheel)
+11. [Step-by-Step Guide](#step-by-step-guide)
    - [Data Collection](#1-data-collection)
    - [Transcription](#2-transcription)
    - [Dataset Preparation](#3-dataset-preparation)
    - [Model Training](#4-model-training)
    - [Deployment](#5-deployment)
    - [CPU Optimization](#6-cpu-optimization)
-10. [Dataset Preparation and DistilBERT Training Example](#dataset-preparation-and-distilbert-training-example)
+12. [Dataset Preparation and DistilBERT Training Example](#dataset-preparation-and-distilbert-training-example)
     - [Using Ollama with QA-DistillBert](#using-ollama-with-qa-distillbert)
     - [Key Aspects of QA-DistillBert](#key-aspects-of-qa-distillbert)
     - [Automated Question Correction using RAG](#automated-question-correction-using-rag)
-11. [Contributing](#contributing)
-12. [License](#license)
-13. [References](#references)
+13. [Contributing](#contributing)
+14. [License](#license)
+15. [References](#references)
+
+## Project Overview
+
+Our project focuses on developing an AI model that can understand and respond to queries related to audio engineering and sound design. We explore different model architectures to find the best approach for our specific use case.
+
+## Model Architectures
+
+### DistilBERT
+
+DistilBERT is our primary model, chosen for its efficiency and performance in question-answering tasks. It's a lightweight version of BERT, retaining much of its language understanding capabilities while being faster and more resource-efficient.
+
+### Sequence-to-Sequence (Seq2Seq) Models and DistilBART
+
+As an alternative to DistilBERT, we also explore Sequence-to-Sequence (Seq2Seq) models, specifically DistilBART. To understand this approach, let's break down the concepts:
+
+#### Understanding Seq2Seq, BART, and DistilBART
+
+1. **Seq2Seq (Sequence-to-Sequence)**:
+   - Seq2Seq is a broad neural network architecture designed to transform one sequence into another.
+   - It typically consists of an encoder (which processes the input sequence) and a decoder (which generates the output sequence).
+   - Seq2Seq is widely used in tasks where both input and output are sequences, such as machine translation and text summarization.
+
+2. **BART (Bidirectional and Auto-Regressive Transformers)**:
+   - BART is a specific implementation of the Seq2Seq architecture developed by Facebook AI.
+   - It uses the Transformer architecture for both encoding and decoding.
+   - BART is versatile and excels in various NLP tasks, including text generation and summarization.
+
+3. **DistilBART**:
+   - DistilBART is a distilled (smaller and more efficient) version of the BART model.
+   - It retains much of BART's performance while being faster and less resource-intensive.
+   - DistilBART is still based on the Seq2Seq architecture, making it suitable for sequence transformation tasks.
+
+In essence, Seq2Seq is the general architecture, BART is a specific implementation of this architecture, and DistilBART is an optimized version of BART.
+
+#### Comparison of DistilBERT and DistilBART
+
+| Aspect              | DistilBERT                 | DistilBART (Seq2Seq)        |
+|---------------------|----------------------------|---------------------------|
+| **Answer Type**     | Extractive                 | Abstractive               |
+| **Flexibility**     | Limited to context         | Can generate novel answers|
+| **Model Size**      | Smaller                    | Generally larger          |
+| **Training Speed**  | Faster                     | Slower                    |
+| **Inference Speed** | Faster                     | Slower                    |
+
+By exploring both DistilBERT and DistilBART, we aim to find the best approach for our audio engineering and sound design question-answering system, balancing performance, flexibility, and computational efficiency.
 
 ## Project Structure
 
