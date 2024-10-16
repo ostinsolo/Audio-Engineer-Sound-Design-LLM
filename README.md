@@ -303,73 +303,79 @@ Follow this guide to set up the project, collect data, prepare the dataset, trai
 
 ### 3. Dataset Preparation
 
-**Directory:** `dataset_preparation/`
+Our refined data preparation process leverages AI-generated prompts, the Parrot Paraphraser for data augmentation, and Pandas for efficient CSV creation. This approach ensures a diverse, high-quality dataset while maintaining optimal performance and flexibility.
 
-**Steps:**
+### Refined Data Preparation Workflow
 
-1. **Preprocess Transcripts:**
-   - Clean and format the transcription data.
-   - Remove any unnecessary noise or artifacts from the text.
-
-2. **Organize Data:**
-   - Structure the data into training, validation, and testing sets.
-   - Example:
-     ```
-     dataset_preparation/
-     ├── train/
-     ├── validation/
-     └── test/
-     ```
-
-3. **Classification and Labeling:**
+1. **Generate Initial Data Dictionaries from AI Prompts:**
    
-   **a. Define Labels:**
-   - Determine the categories or topics relevant to your audio engineering and sound design context (e.g., mixing, mastering, sound synthesis).
+   We use AI prompts to create structured dictionaries, each representing a single data entry.
+
+   ```python
+   data_entries = []
+   for prompt in ai_prompts:
+       response = ai_model.generate(prompt)
+       data_dict = parse_response(response)
+       data_entries.append(data_dict)
+   ```
+
+2. **Augment Data Using Parrot Paraphraser:**
    
-   **b. Automatic Labeling with DistilBERT:**
-   - Utilize DistilBERT to automate the classification of transcripts into predefined labels.
-   - **Setup:**
-     - Ensure you have the `transformers` library installed:
-       ```bash
-       pip install transformers
-       ```
+   Before converting to a DataFrame, we use Parrot to paraphrase and augment our data while still in dictionary format.
+
+   ```python
+   from parrot import Parrot
+
+   parrot = Parrot(model_tag="prithivida/parrot_paraphraser_on_T5")
+
+   def augment_data(data_dict):
+       augmented_data = []
+       for entry in data_dict:
+           augmented_entry = entry.copy()
+           if 'question' in entry:
+               paraphrases = parrot.augment(input_phrase=entry['question'], use_gpu=False, max_return_phrases=3)
+               augmented_entry['paraphrased_questions'] = [p[0] for p in paraphrases if p]
+           augmented_data.append(augmented_entry)
+       return augmented_data
+
+   augmented_data_entries = augment_data(data_entries)
+   ```
+
+3. **Convert Augmented Dictionaries to Pandas DataFrame:**
    
-   - **Example Script:**
-     - Create a script named `label_dataset.py` in the `dataset_preparation/` directory.
-     
-     `````language:dataset_preparation/label_dataset.py
-     from transformers import pipeline
-     import pandas as pd
+   After augmentation, we convert the data to a Pandas DataFrame for efficient handling and CSV export.
 
-     # Initialize the DistilBERT classifier
-     classifier = pipeline('text-classification', model='distilbert-base-uncased-finetuned-sst-2-english')
+   ```python
+   import pandas as pd
 
-     # Load the transcript data
-     transcripts = pd.read_csv('transcripts.csv')
+   df = pd.DataFrame(augmented_data_entries)
+   ```
 
-     # Define a function to classify each transcript
-     def classify_text(text):
-         result = classifier(text[:512])[0]  # Truncate to 512 tokens if necessary
-         return result['label']
-
-     # Apply classification
-     transcripts['label'] = transcripts['text'].apply(classify_text)
-
-     # Save the labeled dataset
-     transcripts.to_csv('labeled_transcripts.csv', index=False)
-     ````
+4. **Export to CSV:**
    
-   - **Usage:**
-     - Navigate to the `dataset_preparation/` directory and run the script:
-       ```bash
-       python label_dataset.py
-       ```
+   Finally, we export the augmented dataset to a CSV file.
 
-   **c. Export to CSV:**
-   - Ensure that the labeled data is saved in a CSV format (`labeled_transcripts.csv`) for easy integration with the training pipeline.
+   ```python
+   df.to_csv('augmented_dataset.csv', index=False)
+   ```
 
-   **d. Automate the Process:**
-   - To make the labeling process as automatic as possible, consider integrating the labeling script into your data pipeline or using scheduling tools to process new transcripts as they become available.
+### Benefits of This Approach
+
+- **Efficiency**: Paraphrasing is done on dictionaries, which is more memory-efficient and flexible than working with DataFrames.
+- **Data Integrity**: The original structure of the data is preserved throughout the augmentation process.
+- **Scalability**: This method is well-suited for large datasets and can be easily parallelized if needed.
+- **Quality**: By augmenting before DataFrame conversion, we ensure a rich, diverse dataset for training our model.
+
+### Tools and Resources
+
+- **Parrot Paraphraser**: For data augmentation. [GitHub Repository](https://github.com/PrithivirajDamodaran/Parrot_Paraphraser)
+- **Pandas**: For efficient data manipulation and CSV creation.
+
+### Reference Implementation
+
+For a practical example of this refined method, refer to the [qa_system.ipynb](QA-DistillBert/notebooks/qa_system.ipynb) notebook in the QA-DistillBert folder. This notebook demonstrates the entire process from AI-driven data generation through augmentation and final CSV creation.
+
+By adopting this refined approach, we significantly enhance the quality and diversity of our dataset while maintaining an efficient and flexible data preparation pipeline. This ensures that our Language Learning Model is trained on a robust, well-structured dataset, potentially leading to improved performance in audio engineering and sound design tasks.
 
 ### 4. Model Training
 
