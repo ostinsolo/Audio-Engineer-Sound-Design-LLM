@@ -151,10 +151,7 @@ data = [
         "Utterance": "Assign to Map 1",
         "Action_Order": ["Map 1"]
     },
-    {
-        "Utterance": "Link to Map 1",
-        "Action_Order": ["Map 1"]
-    },
+
     {
         "Utterance": "Shift Control 1, now 20",
         "Action_Order": ["Control 1", "Now", "20"]
@@ -384,10 +381,6 @@ data = [
         "Action_Order": ["Lower Gain", "Track 16", "5dB"]
     },
     {
-        "Utterance": "Set the high-pass filter cutoff to 200Hz on Track 17",
-        "Action_Order": ["Set High-Pass Filter Cutoff", "200Hz", "Track 17"]
-    },
-    {
         "Utterance": "Activate delay and surround sound on Track 18",
         "Action_Order": ["Activate Delay", "Surround Sound", "Track 18"]
     },
@@ -395,10 +388,8 @@ data = [
         "Utterance": "Adjust the volume of Control 19 to -10dB",
         "Action_Order": ["Adjust Volume", "Control 19", "-10dB"]
     },
+
     {
-        "Utterance": "Set the chorus rate to 1.5Hz on Track 20",
-        "Action_Order": ["Set Chorus Rate", "1.5Hz", "Track 20"]
-    }
         "Utterance": "Set Grain Delay feedback to 0.5",
         "Action_Order": ["Grain Delay", "Feedback", "0.5"]
     },
@@ -438,10 +429,7 @@ data = [
         "Utterance": "Control 2 dry",
         "Action_Order": ["Control 2", "Dry"]
     },
-    {
-        "Utterance": "Apply Phaser on Map 4",
-        "Action_Order": ["Map 4", "Phaser"]
-    },
+
     {
         "Utterance": "Set Wavetable oscillator to saw wave",
         "Action_Order": ["Wavetable", "Oscillator", "Saw Wave"]
@@ -450,10 +438,7 @@ data = [
         "Utterance": "Control 1 time 100ms",
         "Action_Order": ["Control 1", "Time", "100ms"]
     },
-    {
-        "Utterance": "Increase Pitch Hack frequency to 880Hz",
-        "Action_Order": ["Pitch Hack", "Frequency Shifter", "880Hz"]
-    },
+
     {
         "Utterance": "Activate Synth Misc on Track 10",
         "Action_Order": ["Track 10", "Search Device", "Synth Misc"]
@@ -462,10 +447,7 @@ data = [
         "Utterance": "Set Shifter to +5 semitones",
         "Action_Order": ["Shifter", "Pitch", "+5 Semitones"]
     },
-    {
-        "Utterance": "Adjust Frequency Shifter by -3Hz",
-        "Action_Order": ["Frequency Shifter", "Adjust Rate", "-3Hz"]
-    },
+
     {
         "Utterance": "Control 3 time 200ms",
         "Action_Order": ["Control 3", "Time", "200ms"]
@@ -518,10 +500,7 @@ data = [
         "Utterance": "Control 7 time 150ms",
         "Action_Order": ["Control 7", "Time", "150ms"]
     },
-    {
-        "Utterance": "Apply Delay to Map 5",
-        "Action_Order": ["Map 5", "Delay"]
-    },
+
     {
         "Utterance": "Set Reverb decay to 2 seconds",
         "Action_Order": ["Reverb", "Decay", "2 seconds"]
