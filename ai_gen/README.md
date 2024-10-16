@@ -29,6 +29,29 @@ The main components of this project are:
 2. Run the `auto_utterance_action.ipynb` notebook to generate the dataset.
 3. The resulting CSV file (`ableton_utterances_and_actions.csv`) will contain the generated utterances and their corresponding action sequences.
 
+### Using Ollama with AI-Generated Ableton Live Voice Commands
+
+To utilize this project with Ollama, follow these steps:
+
+1. **Install Ollama:**
+   - Visit [Ollama.com](https://ollama.com) to download and install Ollama for your operating system.
+
+2. **Run the LLaMA Model:**
+   - Open your terminal and execute the following command to run LLaMA:
+     ```bash
+     ollama run llama3.2
+     ```
+
+3. **Start Ollama Server:**
+   - After running the model, close the Ollama application from the top menu bar on your Mac.
+   - Then, start the Ollama server by running:
+     ```bash
+     ollama serve
+     ```
+
+4. **Use the Project:**
+   - With Ollama running, you can now use the `auto_utterance_action.ipynb` notebook to generate the dataset as described in the usage instructions above.
+
 ## Development Status
 
 **Important Note:** This system is currently under active development and has not been thoroughly tested yet. We welcome contributions and testing to identify and resolve potential errors or inconsistencies in the generated data.
