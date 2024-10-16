@@ -1,5 +1,5 @@
 # ableton_data.py
-from .utterance_actions_template import action_order_templates, utterance_templates
+from utterance_actions_template import action_order_templates, utterance_templates
 # List of all available audio effects in Ableton Live
 audio_effects = [
     "Amp",
