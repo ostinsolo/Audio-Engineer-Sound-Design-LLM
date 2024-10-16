@@ -485,6 +485,8 @@ To utilize the QA-DistillBert example, follow these steps:
    - Comparing the fine-tuned model against pre-trained models on a holdout test set.
    - Demonstrating significant improvements in performance metrics after fine-tuning.
 
+For those interested in exploring text classification using DistilBERT, which can be a valuable step in automating dataset creation and cleaning, we recommend this tutorial: [Building a Text Classification Model using DistilBERT](https://medium.com/@prakashram1327/building-a-text-classification-model-using-distilbert-703c1409696c). This resource provides insights into how to prepare and process data for text classification tasks, which could be adapted to help automate the generation and categorization of questions for our audio engineering and sound design dataset. By implementing similar techniques, we could potentially streamline the process of creating a large, diverse set of questions without the need for manual writing of thousands of entries.
+
 ### Automated Question Correction using RAG
 
 To further improve the quality of our dataset and reduce manual review, we implemented an additional layer using Retrieval Augmented Generation (RAG) with a local LLM. This step automatically corrects filtered questions that were initially deemed irrelevant or low-quality.
@@ -597,6 +599,7 @@ This customized `QA-DistillBert` setup serves as a robust reference for implemen
 
 For more details, explore the `QA-DistillBert` folder within this repository.
 
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit more files but NOT Pull Requests.
@@ -623,4 +626,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 14. [TensorFlow GitHub Repository](https://github.com/tensorflow/tensorflow): Source code for TensorFlow, used in building optimized wheels.
 15. [Audio-Engineer-Sound-Design-LLM Releases](https://github.com/ostinsolo/Audio-Engineer-Sound-Design-LLM/releases/tag/v0.0.2): Project releases, including custom TensorFlow wheels.
 16. [LangChain.js GitHub Repository](https://github.com/langchain-ai/langchainjs): JavaScript library for building applications with large language models.
-
