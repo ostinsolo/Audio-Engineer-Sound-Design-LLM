@@ -64,19 +64,28 @@ As an alternative to DistilBERT, we also explore Sequence-to-Sequence (Seq2Seq) 
    - It retains much of BART's performance while being faster and less resource-intensive.
    - DistilBART is still based on the Seq2Seq architecture, making it suitable for sequence transformation tasks.
 
-In essence, Seq2Seq is the general architecture, BART is a specific implementation of this architecture, and DistilBART is an optimized version of BART.
+#### DistilT5
 
-#### Comparison of DistilBERT and DistilBART
+In addition to DistilBERT and DistilBART, we are considering **DistilT5** as another potential model architecture for our project.
 
-| Aspect              | DistilBERT                 | DistilBART (Seq2Seq)        |
-|---------------------|----------------------------|---------------------------|
-| **Answer Type**     | Extractive                 | Abstractive               |
-| **Flexibility**     | Limited to context         | Can generate novel answers|
-| **Model Size**      | Smaller                    | Generally larger          |
-| **Training Speed**  | Faster                     | Slower                    |
-| **Inference Speed** | Faster                     | Slower                    |
+1. **DistilT5 (Distilled T5)**:
+   - DistilT5 is a distilled version of the T5 (Text-To-Text Transfer Transformer) model.
+   - Like T5, DistilT5 is designed to handle a wide range of NLP tasks by converting them into a text-to-text format.
+   - Distillation reduces the model size and increases inference speed while maintaining a significant portion of the original T5's performance.
+   - DistilT5 is versatile and can be fine-tuned for tasks such as text generation, translation, and question-answering, making it a strong candidate for our audio engineering and sound design LLM.
 
-By exploring both DistilBERT and DistilBART, we aim to find the best approach for our audio engineering and sound design question-answering system, balancing performance, flexibility, and computational efficiency.
+#### Comparison of DistilBERT, DistilBART, and DistilT5
+
+| Aspect              | DistilBERT                 | DistilBART (Seq2Seq)        | DistilT5                      |
+|---------------------|----------------------------|-----------------------------|------------------------------|
+| **Answer Type**     | Extractive                 | Abstractive                 | Both Extractive and Abstractive|
+| **Flexibility**     | Limited to context         | Can generate novel answers  | Highly flexible across tasks |
+| **Model Size**      | Smaller                    | Generally larger            | Moderate size                |
+| **Training Speed**  | Faster                     | Slower                      | Moderate speed               |
+| **Inference Speed** | Faster                     | Slower                      | Faster than DistilBART        |
+| **Use Cases**       | Question Answering         | Text Generation and Summarization | Text-to-Text tasks including QA |
+
+By exploring DistilBERT, DistilBART, and DistilT5, we aim to identify the best model architecture for our audio engineering and sound design question-answering system, balancing performance, flexibility, and computational efficiency.
 
 ## Project Structure
 
@@ -205,7 +214,7 @@ ONNX (Open Neural Network Exchange) is an open format designed to represent mach
 
 To leverage ONNX in our Audio-Engineer-Sound-Design-LLM project, we can follow these steps:
 
-1. **Convert to ONNX**: After training our DistilBERT or custom model, convert it to ONNX format using tools like `torch.onnx`.
+1. **Convert to ONNX**: After training our DistilBERT, DistilBART, or DistilT5 model, convert it to ONNX format using tools like `torch.onnx`.
 
 2. **Optimize with ONNX Runtime**: Use ONNX Runtime to apply automatic optimizations to our model.
 
