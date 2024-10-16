@@ -12,9 +12,6 @@ venv/
 .ipynb_checkpoints
 
 # Data
-*.csv
-*.json
-*.txt
 *.wav
 *.mp3
 

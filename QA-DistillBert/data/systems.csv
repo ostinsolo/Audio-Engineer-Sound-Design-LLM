@@ -1,0 +1,38 @@
+ultrasound_system,manufacturer,compatible_probes
+HDI 5000,ATL,"C3, C4-2, C5-2, C5-IVT, C7-4, C8-4v, C9-5ICT, CL 10-5, CT8-4, L10-5, L12-5, L7-4, MPT 7-4, P3-2, P4-1, P4-2, P5-3, P6-3, P7-4"
+HDI 1500,ATL,"C5-2, C5-IVT, C7-4, C9-5ICT, L7-4"
+HDI 3000,ATL,"C5-2, C5-IVT, C7-4, C8-4v, CL 10-5, CT8-4, L7-4"
+HDI 3500,ATL,"C5-2, C5-IVT, C8-4v, CT8-4"
+UM9 HDI,ATL,"C5-IVT, C7-4, L7-4"
+HDI 1000,ATL,"C9-5ICT, CT8-4"
+HDI 4000,ATL,C9-5ICT
+LOGIQ 700,G.E.,"227s, 348c, 618c"
+Voluson 730 Pro,G.E.,RAB2-5L
+Voluson 730,G.E.,RAB2-5L
+Voluson E6,G.E.,RIC5-9D
+Voluson E8,G.E.,RIC5-9D
+Voluson E10,G.E.,RIC5-9D
+LOGIQ S7,G.E.,RIC5-9D
+LOGIQ S8,G.E.,RIC5-9D
+Vivid E95,G.E.,RIC5-9D
+LOGIQ E9,G.E.,RIC5-9D
+LOGIQ E10,G.E.,RIC5-9D
+EPIQ 5,Philips,"C5-1, C9-3v, L12-3, S4-2"
+EPIQ 7,Philips,"C5-1, C9-3v, L12-3, S4-2"
+CX50,Philips,"C5-1, C9-3v, L12-3, S4-2"
+Affiniti 70,Philips,"C5-1, L12-3, S4-2"
+iU22,Philips,"C5-1, C8-5, L12-3, L15-7io, L17-5, S4-1, S4-2"
+iE33,Philips,"C5-1, C8-5, L12-3, S4-1, S4-2"
+HD11,Philips,"C5-2, C8-4v, L12-3, S4-1"
+HD11 XE,Philips,"C5-2, C8-4v, C8-5, L12-3, S4-1, S4-2"
+HD15,Philips,"C8-4v, C8-5, L12-3, S4-2"
+CX30,Philips,C8-5
+HD7,Philips,C8-5
+HD9,Philips,"C8-5, S4-2"
+S1000,Siemens Acuson,"10V4, 9EVF4"
+S2000,Siemens Acuson,"10V4, 9EVF4"
+S3000,Siemens Acuson,"10V4, 9EVF4"
+Juniper,Siemens Acuson,12L3
+Sequoia,Siemens Acuson,15L8W
+Sequoia 512,Siemens Acuson,5C2
+Cypress Portable,Siemens Acuson,7V3c

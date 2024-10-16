@@ -1,0 +1,23 @@
+Number of Documents: 324
+Number of Queries (Total): 963
+Number of Queries (Training): 674
+Number of Queries (Validation): 144
+Number of Queries (Test): 145
+
+Base Embedding Model: multi-qa-distilbert-cos-v1
+
+Best Hyperparameters:
+per_gpu_batch_size: 56
+weight_decay: 0.20906624405054877
+learning_rate: 3.631692566303126e-05
+warmup_steps: 106
+num_epochs: 4
+
+Performance Metrics:
+Accuracy@1: 0.9103448275862069
+Accuracy@5: 0.9862068965517241
+Precision@1: 0.9103448275862069
+Recall@1: 0.9103448275862069
+Recall@5: 0.9862068965517241
+NDCG@10: 0.9585717351908698
+MRR@10: 0.9448932676518884
