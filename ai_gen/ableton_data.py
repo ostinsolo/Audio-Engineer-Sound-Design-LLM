@@ -1,4 +1,4 @@
-# ableton_data_info.py
+# ableton_data.py
 
 # List of all available audio effects in Ableton Live
 audio_effects = [

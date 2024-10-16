@@ -1,4 +1,3 @@
-import json
 import random
 import re
 from tqdm import tqdm
@@ -6,8 +5,7 @@ from langchain_ollama import OllamaLLM
 from langchain.prompts import PromptTemplate
 
 # Load the Ableton data
-with open('ableton_data.json', 'r') as f:
-    ableton_data = json.load(f)
+from ableton_data import *
 
 # Load the Ollama LLM
 llm = OllamaLLM(model="llama3.2")
@@ -26,10 +24,14 @@ Utterance: [insert utterance here]
 Action Order: ["step 1", "step 2", ...]
 
 Rules:
-1. If the utterance contains "track" with a number, the first action should be the specific track number.
-2. If the utterance mentions an audio effect, instrument, or device type, include it in the action order.
-3. Use one of the common actions in the utterance.
-4. You can use or adapt one of the utterance templates, or create a new utterance based on the provided data.
+1. Track-related actions always start with "track {track_number}" unless it's a global action.
+2. Device-related actions always start with "search device" followed by the device name.
+3. For instruments, the order is: "search device", "{instrument}", "{device_type}", then the action.
+4. Audio effects are treated separately from instruments.
+5. Control actions include one of the speed modifiers, followed by a value between 0 and 100.
+6. When creating a track, don't mention a track number (it doesn't exist yet).
+7. Use one of the common actions in the utterance.
+8. You can use or adapt one of the utterance templates, or create a new utterance based on the provided data.
 
 Now generate a new, unique utterance and action order:
 """
@@ -46,22 +48,26 @@ def extract_utterance_and_action(response):
 
 def generate_utterance_and_action():
     # Randomly select elements from the Ableton data to encourage variety
-    audio_effect = random.choice(ableton_data['audio_effects'])
-    device_type = random.choice(ableton_data['device_types'])
-    instrument = random.choice(ableton_data['instruments'])
-    action = random.choice(ableton_data['common_actions'])
-    template = random.choice(ableton_data['utterance_templates'])
+    audio_effect = random.choice(audio_effects)
+    instrument = random.choice(instruments)
+    device_type = random.choice(device_types[instrument])
+    action_category = random.choice(list(actions.keys()))
+    action = random.choice(actions[action_category])
+    template = random.choice(utterance_templates)
+    speed_modifier = random.choice(sum(speed_modifiers.values(), []))
     
     # Create a simplified version of the Ableton data to pass to the AI
     simplified_data = {
         'selected_audio_effect': audio_effect,
-        'selected_device_type': device_type,
         'selected_instrument': instrument,
+        'selected_device_type': device_type,
         'selected_action': action,
-        'selected_template': template
+        'selected_template': template,
+        'selected_speed_modifier': speed_modifier,
+        'action_order_templates': action_order_templates
     }
     
-    prompt = prompt_template.format(ableton_data=json.dumps(simplified_data, indent=2))
+    prompt = prompt_template.format(ableton_data=str(simplified_data))
     output = llm(prompt)
     return extract_utterance_and_action(output)
 
@@ -133,11 +139,11 @@ def main():
             generated_data.append({"Utterance": utterance, "Action_Order": action_order})
 
     # Save the results
-    with open("generated_utterances_and_actions.json", "w") as f:
-        json.dump(generated_data, f, indent=2)
+    with open("generated_utterances_and_actions.py", "w") as f:
+        f.write("generated_data = " + str(generated_data))
 
     print(f"Generated {len(generated_data)} utterances and action orders.")
-    print("Results saved to generated_utterances_and_actions.json")
+    print("Results saved to generated_utterances_and_actions.py")
 
 if __name__ == "__main__":
     main()
