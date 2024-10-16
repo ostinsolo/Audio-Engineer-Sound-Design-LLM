@@ -1,0 +1,13 @@
+numpy
+pandas
+torch
+scikit-learn
+matplotlib
+sentence-transformers
+statsmodels
+scipy
+langchain
+bayesian-optimization
+scikit_posthocs
+mplcyberpunk
+langchain-ollama

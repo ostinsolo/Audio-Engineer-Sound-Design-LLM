@@ -5,15 +5,15 @@ data = [
     },
     {
         "Utterance": "Solo track 1",
-        "Action_Order": ["Track (n)", "Solo"]
+        "Action_Order": ["Track 1", "Solo"]
     },
     {
         "Utterance": "Activate solo on track 1",
-        "Action_Order": ["Track (n)", "Solo"]
+        "Action_Order": ["Track 1", "Solo"]
     },
     {
         "Utterance": "Enable solo for track 1",
-        "Action_Order": ["Track (n)", "Solo"]
+        "Action_Order": ["Track 1", "Solo"]
     },
     {
         "Utterance": "Dynamic tube",
@@ -49,15 +49,15 @@ data = [
     },
     {
         "Utterance": "Mute track 2",
-        "Action_Order": ["Track (n)", "Mute"]
+        "Action_Order": ["Track 2", "Mute"]
     },
     {
         "Utterance": "Silence track 2",
-        "Action_Order": ["Track (n)", "Mute"]
+        "Action_Order": ["Track 2", "Mute"]
     },
     {
-        "Utterance": "Disable track 2",
-        "Action_Order": ["Track (n)", "Mute"]
+        "Utterance": "Disable track 3",
+        "Action_Order": ["Track 3", "Mute"]
     },
     {
         "Utterance": "Arm",
@@ -164,8 +164,8 @@ data = [
         "Action_Order": ["Track (name)", "Play", "Reverb"]
     },
     {
-        "Utterance": "Mute track 2 and lower the bass",
-        "Action_Order": ["Track (n)", "Mute", "Bass"]
+        "Utterance": "Mute track 5 and lower the bass",
+        "Action_Order": ["Track 5", "Mute", "Bass"]
     },
     {
         "Utterance": "Search device and add compressor",
@@ -181,15 +181,15 @@ data = [
     },
     {
         "Utterance": "Chorus-Ensemble on Track 3",
-        "Action_Order": ["Track (n)", "Search Device", "Chorus Ensemble"]
+        "Action_Order": ["Track 3", "Search Device", "Chorus Ensemble"]
     },
     {
         "Utterance": "Apply Chorus-Ensemble on Track 3",
-        "Action_Order": ["Track (n)", "Search Device", "Chorus Ensemble"]
+        "Action_Order": ["Track 3", "Search Device", "Chorus Ensemble"]
     },
     {
-        "Utterance": "Enable Chorus-Ensemble on Track 3",
-        "Action_Order": ["Track (n)", "Search Device", "Chorus Ensemble"]
+        "Utterance": "Enable Chorus-Ensemble on Track 6",
+        "Action_Order": ["Track 6", "Search Device", "Chorus Ensemble"]
     },
     {
         "Utterance": "Adjust Control 1, now",
@@ -201,11 +201,11 @@ data = [
     },
     {
         "Utterance": "Mute and solo track 1",
-        "Action_Order": ["Track (n)", "Mute", "Solo"]
+        "Action_Order": ["Track 1", "Mute", "Solo"]
     },
     {
         "Utterance": "Apply Grain Delay and Limiter on Track 2",
-        "Action_Order": ["Track (n)", "Grain Delay", "Limiter"]
+        "Action_Order": ["Track 2", "Grain Delay", "Limiter"]
     },
     {
         "Utterance": "Set Envelope Follower on Device Chain",
@@ -213,7 +213,7 @@ data = [
     },
     {
         "Utterance": "Set Drum Synth on Track 3",
-        "Action_Order": ["Track (n)", "Search Device", "Drum Synth"]
+        "Action_Order": ["Track 3", "Search Device", "Drum Synth"]
     },
     {
         "Utterance": "Adjust Control 1, now 20",
@@ -229,11 +229,11 @@ data = [
     },
     {
         "Utterance": "Lower the volume for track 2",
-        "Action_Order": ["Track (n)", "Volume Control"]
+        "Action_Order": ["Track 2", "Volume Control"]
     },
     {
         "Utterance": "Increase volume on track 1",
-        "Action_Order": ["Track (n)", "Volume Control"]
+        "Action_Order": ["Track 1", "Volume Control"]
     },
     {
         "Utterance": "Set Control 1 to increase EQ Eight",
@@ -412,7 +412,7 @@ data = [
     },
     {
         "Utterance": "Activate Vocoder on Track 6",
-        "Action_Order": ["Track (n)", "Search Device", "Vocoder"]
+        "Action_Order": ["Track 6", "Search Device", "Vocoder"]
     },
     {
         "Utterance": "Set Synth Pad to pad mode",
@@ -424,7 +424,7 @@ data = [
     },
     {
         "Utterance": "Enable Compressor on Track 9",
-        "Action_Order": ["Track (n)", "Search Device", "Compressor"]
+        "Action_Order": ["Track 9", "Search Device", "Compressor"]
     },
     {
         "Utterance": "Set Loop length to 4 bars",
@@ -456,7 +456,7 @@ data = [
     },
     {
         "Utterance": "Activate Synth Misc on Track 10",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Misc"]
+        "Action_Order": ["Track 10", "Search Device", "Synth Misc"]
     },
     {
         "Utterance": "Set Shifter to +5 semitones",
@@ -476,7 +476,7 @@ data = [
     },
     {
         "Utterance": "Activate External Instrument on Track 11",
-        "Action_Order": ["Track (n)", "Search Device", "External Instrument"]
+        "Action_Order": ["Track 11", "Search Device", "External Instrument"]
     },
     {
         "Utterance": "Set Hybrid Reverb mix to 60%",
@@ -504,7 +504,7 @@ data = [
     },
     {
         "Utterance": "Activate Synth Lead on Track 12",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Lead"]
+        "Action_Order": ["Track 12", "Search Device", "Synth Lead"]
     },
     {
         "Utterance": "Set Chorus-Ensemble depth to 0.7",
@@ -532,7 +532,7 @@ data = [
     },
     {
         "Utterance": "Activate Synth Voices on Track 13",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Voices"]
+        "Action_Order": ["Track 13", "Search Device", "Synth Voices"]
     },
     {
         "Utterance": "Set Utility gain to +3dB",
@@ -548,7 +548,7 @@ data = [
     },
     {
         "Utterance": "Apply Phaser to Track 14",
-        "Action_Order": ["Track (n)", "Phaser"]
+        "Action_Order": ["Track 14", "Phaser"]
     },
     {
         "Utterance": "Set Mallets tempo to 120 BPM",
@@ -560,7 +560,7 @@ data = [
     },
     {
         "Utterance": "Enable Spectrum analyzer on Track 15",
-        "Action_Order": ["Track (n)", "Search Device", "Spectrum"]
+        "Action_Order": ["Track 15", "Search Device", "Spectrum"]
     },
     {
         "Utterance": "Set Synth Rhythmic pattern to 16 steps",
@@ -576,7 +576,7 @@ data = [
     },
     {
         "Utterance": "Activate Synth Keys on Track 16",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Keys"]
+        "Action_Order": ["Track 16", "Search Device", "Synth Keys"]
     },
     {
         "Utterance": "Set Control 2 to time 180ms",
@@ -584,7 +584,7 @@ data = [
     },
     {
         "Utterance": "Apply Overdrive on Track 17",
-        "Action_Order": ["Track (n)", "Overdrive"]
+        "Action_Order": ["Track 17", "Overdrive"]
     },
     {
         "Utterance": "Control 3 wet",
@@ -592,7 +592,7 @@ data = [
     },
     {
         "Utterance": "Enable Synth Pad on Track 18",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Pad"]
+        "Action_Order": ["Track 18", "Search Device", "Synth Pad"]
     },
     {
         "Utterance": "Set Shifter range to -12 to +12 semitones",
@@ -604,7 +604,7 @@ data = [
     },
     {
         "Utterance": "Apply Delay on Track 19",
-        "Action_Order": ["Track (n)", "Delay"]
+        "Action_Order": ["Track 19", "Delay"]
     },
     {
         "Utterance": "Set Reverb size to large",
@@ -616,7 +616,7 @@ data = [
     },
     {
         "Utterance": "Activate Vocoder on Track 20",
-        "Action_Order": ["Track (n)", "Search Device", "Vocoder"]
+        "Action_Order": ["Track 20", "Search Device", "Vocoder"]
     },
     {
         "Utterance": "Set Control 6 to dry/wet 50%",
@@ -624,7 +624,7 @@ data = [
     },
     {
         "Utterance": "Apply Frequency Shifter on Track 21",
-        "Action_Order": ["Track (n)", "Frequency Shifter"]
+        "Action_Order": ["Track 21", "Frequency Shifter"]
     },
     {
         "Utterance": "Control 7 wet",
@@ -636,7 +636,7 @@ data = [
     },
     {
         "Utterance": "Activate Synth Misc on Track 22",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Misc"]
+        "Action_Order": ["Track 22", "Search Device", "Synth Misc"]
     },
     {
         "Utterance": "Set Synth Voices harmony to 3 voices",
@@ -648,7 +648,7 @@ data = [
     },
     {
         "Utterance": "Apply Chorus-Ensemble on Track 23",
-        "Action_Order": ["Track (n)", "Chorus-Ensemble"]
+        "Action_Order": ["Track 23", "Chorus-Ensemble"]
     },
     {
         "Utterance": "Set Delay feedback to 0.7",
@@ -660,7 +660,7 @@ data = [
     },
     {
         "Utterance": "Enable Synth on Track 24",
-        "Action_Order": ["Track (n)", "Search Device", "Synth"]
+        "Action_Order": ["Track 24", "Search Device", "Synth"]
     },
     {
         "Utterance": "Set Utility pan to left",
@@ -672,7 +672,7 @@ data = [
     },
     {
         "Utterance": "Apply Shaper on Track 25",
-        "Action_Order": ["Track (n)", "Shaper"]
+        "Action_Order": ["Track 25", "Shaper"]
     },
     {
         "Utterance": "Set Reverb mix to 80%",
@@ -684,7 +684,7 @@ data = [
     },
     {
         "Utterance": "Activate Synth Lead on Track 26",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Lead"]
+        "Action_Order": ["Track 26", "Search Device", "Synth Lead"]
     },
     {
         "Utterance": "Set Mixer gain to +2dB",
@@ -696,7 +696,7 @@ data = [
     },
     {
         "Utterance": "Apply EQ Three on Track 27",
-        "Action_Order": ["Track (n)", "EQ Three"]
+        "Action_Order": ["Track 27", "EQ Three"]
     },
     {
         "Utterance": "Set Compressor threshold to -20dB",
@@ -708,7 +708,7 @@ data = [
     },
     {
         "Utterance": "Enable Synth Pad on Track 28",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Pad"]
+        "Action_Order": ["Track 28", "Search Device", "Synth Pad"]
     },
     {
         "Utterance": "Set Shifter pitch to +7 semitones",
@@ -720,7 +720,7 @@ data = [
     },
     {
         "Utterance": "Apply Frequency Shifter on Track 29",
-        "Action_Order": ["Track (n)", "Frequency Shifter"]
+        "Action_Order": ["Track 29", "Frequency Shifter"]
     },
     {
         "Utterance": "Set Reverb pre-delay to 100ms",
@@ -732,7 +732,7 @@ data = [
     },
     {
         "Utterance": "Activate Synth Voices on Track 30",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Voices"]
+        "Action_Order": ["Track 30", "Search Device", "Synth Voices"]
     },
     {
         "Utterance": "Set Utility gain to +5dB",
@@ -744,7 +744,7 @@ data = [
     },
     {
         "Utterance": "Apply Envelope Follower on Track 31",
-        "Action_Order": ["Track (n)", "Envelope Follower"]
+        "Action_Order": ["Track 31", "Envelope Follower"]
     },
     {
         "Utterance": "Set Mixer pan to right",
@@ -756,7 +756,7 @@ data = [
     },
     {
         "Utterance": "Activate Synth Keys on Track 32",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Keys"]
+        "Action_Order": ["Track 32", "Search Device", "Synth Keys"]
     },
     {
         "Utterance": "Set Control 2 to time 200ms",
@@ -764,7 +764,7 @@ data = [
     },
     {
         "Utterance": "Apply Overdrive on Track 33",
-        "Action_Order": ["Track (n)", "Overdrive"]
+        "Action_Order": ["Track 33", "Overdrive"]
     },
     {
         "Utterance": "Control 2 dry/wet",
@@ -772,7 +772,7 @@ data = [
     },
     {
         "Utterance": "Activate Synth Pad on Track 34",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Pad"]
+        "Action_Order": ["Track 34", "Search Device", "Synth Pad"]
     },
     {
         "Utterance": "Set Shifter range to -24 to +24 semitones",
@@ -784,7 +784,7 @@ data = [
     },
     {
         "Utterance": "Apply Delay on Track 35",
-        "Action_Order": ["Track (n)", "Delay"]
+        "Action_Order": ["Track 35", "Delay"]
     },
     {
         "Utterance": "Set Reverb size to medium",
@@ -796,7 +796,7 @@ data = [
     },
     {
         "Utterance": "Apply Chorus-Ensemble on Track 36",
-        "Action_Order": ["Track (n)", "Chorus-Ensemble"]
+        "Action_Order": ["Track 36", "Chorus-Ensemble"]
     },
     {
         "Utterance": "Set Delay feedback to 0.8",
@@ -808,7 +808,7 @@ data = [
     },
     {
         "Utterance": "Activate Vocoder on Track 37",
-        "Action_Order": ["Track (n)", "Search Device", "Vocoder"]
+        "Action_Order": ["Track 37", "Search Device", "Vocoder"]
     },
     {
         "Utterance": "Set Control 6 to dry/wet 60%",
@@ -816,7 +816,7 @@ data = [
     },
     {
         "Utterance": "Apply Frequency Shifter on Track 38",
-        "Action_Order": ["Track (n)", "Frequency Shifter"]
+        "Action_Order": ["Track 38", "Frequency Shifter"]
     },
     {
         "Utterance": "Control 7 wet",
@@ -828,6 +828,6 @@ data = [
     },
     {
         "Utterance": "Activate Synth Misc on Track 39",
-        "Action_Order": ["Track (n)", "Search Device", "Synth Misc"]
+        "Action_Order": ["Track 39", "Search Device", "Synth Misc"]
     }
 ]

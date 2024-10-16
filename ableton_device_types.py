@@ -1,0 +1,22 @@
+device_types = {
+    "Ambient & Evolving",
+    "Bass",
+    "Brass",
+    "Effects",
+    "Pad",
+    "Percussive",
+    "Piano & Keys",
+    "Strings",
+    "Synth Keys",
+    "Synth",
+    "Synth Pad",
+    "Synth Lead",
+    "Synth Rhythmic",
+    "Experimental",
+    "Guitar & Plucked",
+    "Mallets",
+    "Synth Misc",
+    "Synth Voices",
+    "Voices",
+    "Winds"
+}
