@@ -1,6 +1,8 @@
 # AI-Generated Ableton Live Voice Commands
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ostinsolo/Audio-Engineer-Sound-Design-LLM/blob/main/ai_gen/auto_utterance_action.ipynb)
+<a href="https://colab.research.google.com/github/ostinsolo/Audio-Engineer-Sound-Design-LLM/blob/main/ai_gen/auto_utterance_action.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+</a>
 
 This project aims to generate a dataset of natural language utterances and corresponding action sequences for controlling Ableton Live using voice commands. The generated data can be used to train a machine learning model for voice-controlled music production.
 
