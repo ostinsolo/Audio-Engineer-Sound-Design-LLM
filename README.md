@@ -28,9 +28,10 @@ This repository contains resources and code for developing a Language Learning M
 12. [Dataset Preparation and DistilBERT Training Example](#dataset-preparation-and-distilbert-training-example)
     - [Key Aspects of QA-DistillBert](#key-aspects-of-qa-distillbert)
     - [Automated Question Correction using RAG](#automated-question-correction-using-rag)
-13. [Contributing](#contributing)
-14. [License](#license)
-15. [References](#references)
+13. [AI-Generated Ableton Live Voice Commands](#ai-generated-ableton-live-voice-commands)
+14. [Contributing](#contributing)
+15. [License](#license)
+16. [References](#references)
 
 ## Project Overview
 
@@ -629,6 +630,28 @@ df_final = pd.concat([df_final, pd.DataFrame(final_dataset)])
 This customized `QA-DistillBert` setup serves as a robust reference for implementing similar QA retrieval systems, showcasing best practices in data preparation, model selection, and fine-tuning techniques, all integrated with Ollama for enhanced performance.
 
 For more details, explore the `QA-DistillBert` folder within this repository.
+
+
+## AI-Generated Ableton Live Voice Commands
+
+Inspired by the QA-DistillBert example, we've developed a system for generating Ableton Live voice commands using AI. This project aims to create a dataset of natural language utterances and corresponding action sequences for controlling Ableton Live through voice commands.
+
+### Key Features:
+
+1. **Data Generation**: Uses AI (Ollama LLM) to create diverse and realistic voice command utterances and their corresponding Ableton Live action sequences.
+2. **Python Dictionary Approach**: Instead of CSV files, we use Python dictionaries to create prompts, offering more flexibility and easier integration with AI models.
+3. **Ableton Live Integration**: Utilizes Ableton Live's data structures and actions to ensure generated commands are relevant and executable.
+4. **Future AI Agent**: The project lays groundwork for an advanced AI agent that can pilot Max MSP using Ableton's Live Object Model (LOM), transforming natural language into Ableton actions.
+
+### How It Works:
+
+1. The system generates natural language utterances based on Ableton Live's structure and capabilities.
+2. For each utterance, it creates a corresponding action sequence representing the steps to execute the command in Ableton Live.
+3. The generated data is processed and can be used to train a machine learning model for voice-controlled music production.
+
+For detailed information on setup, usage, and contribution guidelines, please refer to the [AI-Generated Ableton Live Voice Commands README](ai_gen/README.md).
+
+This project represents an exciting step towards creating an AI-driven interface for Ableton Live, potentially revolutionizing how musicians and producers interact with their digital audio workstations.
 
 
 ## Contributing
