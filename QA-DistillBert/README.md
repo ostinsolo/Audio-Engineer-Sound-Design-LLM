@@ -220,3 +220,44 @@ This project successfully developed a QA information retrieval system using a fi
 - langchain
 - bayesian-optimization
 - requests (for PrivateGPT implementation)
+
+## Using Ollama with QA-DistillBert
+
+To utilize this QA-DistillBert example, follow these steps:
+
+1. **Install Ollama:**
+   - Visit [Ollama.com](https://ollama.com) to download and install Ollama for your operating system.
+
+2. **Run the LLaMA Model:**
+   - Open your terminal and execute:
+     ```bash
+     ollama run llama3.2
+     ```
+
+3. **Start Ollama Server:**
+   - After running the model, close the Ollama application from the top menu bar on your Mac.
+   - Start the Ollama server:
+     ```bash
+     ollama serve
+     ```
+
+4. **Navigate to QA-DistillBert Folder:**
+   - Change to the `QA-DistillBert` directory:
+     ```bash
+     cd QA-DistillBert
+     ```
+
+5. **Follow the Instructions:**
+   - Refer to the sections below for detailed instructions on dataset preparation, model training, and deployment.
+
+## Key Aspects of QA-DistillBert
+
+1. **Data Preparation:** Converting tabular data into human-readable text documents and generating synthetic queries using Ollama's LLaMA model.
+
+2. **Model Selection and Evaluation:** Evaluating pre-trained embedding models from Hugging Face and using statistical tests to compare model performance.
+
+3. **Hyperparameter Tuning:** Employing Bayesian optimization for fine-tuning the DistilBERT model.
+
+4. **Fine-tuning Process:** Using the `MultipleNegativesRankingLoss` function and monitoring various performance metrics.
+
+5. **Performance Evaluation:** Comparing the fine-tuned model against pre-trained models on a holdout test set.

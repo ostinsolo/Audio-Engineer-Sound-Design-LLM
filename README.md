@@ -26,7 +26,6 @@ This repository contains resources and code for developing a Language Learning M
    - [Deployment](#5-deployment)
    - [CPU Optimization](#6-cpu-optimization)
 12. [Dataset Preparation and DistilBERT Training Example](#dataset-preparation-and-distilbert-training-example)
-    - [Using Ollama with QA-DistillBert](#using-ollama-with-qa-distillbert)
     - [Key Aspects of QA-DistillBert](#key-aspects-of-qa-distillbert)
     - [Automated Question Correction using RAG](#automated-question-correction-using-rag)
 13. [Contributing](#contributing)
@@ -495,36 +494,6 @@ By adopting this refined approach, we significantly enhance the quality and dive
 
 For an excellent example of how to prepare a dataset and train DistilBERT for a Question-Answering (QA) Retrieval System, we have created a customized setup in the `QA-DistillBert` folder. This setup demonstrates a comprehensive approach to developing a QA system using fine-tuned DistilBERT models integrated with Ollama.
 
-### Using Ollama with QA-DistillBert
-
-To utilize the QA-DistillBert example, follow these steps:
-
-1. **Install Ollama:**
-   - Visit [Ollama.com](https://ollama.com) to download and install Ollama for your operating system.
-
-2. **Run the LLaMA Model:**
-   - Open your terminal and execute the following command to run LLaMA:
-     ```bash
-     ollama run llama3.2
-     ```
-
-3. **Start Ollama Server:**
-   - After running the model, close the Ollama application from the top menu bar on your Mac.
-   - Then, start the Ollama server by running:
-     ```bash
-     ollama serve
-     ```
-
-4. **Navigate to QA-DistillBert Folder:**
-   - Instead of using the external GitHub repository, we have created our own `QA-DistillBert` folder with updates and custom configurations.
-   - Navigate to the `QA-DistillBert` directory:
-     ```bash
-     cd QA-DistillBert
-     ```
-
-5. **Follow the Customized Instructions:**
-   - Inside the `QA-DistillBert` folder, you will find updated scripts and configurations tailored to work seamlessly with Ollama and our project's specific requirements.
-   - Refer to the README.md inside the `QA-DistillBert` folder for detailed instructions on dataset preparation, model training, and deployment.
 
 ### Key Aspects of QA-DistillBert:
 
