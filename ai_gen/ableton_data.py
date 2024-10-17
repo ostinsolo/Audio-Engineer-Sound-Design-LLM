@@ -205,7 +205,6 @@ instruments = [
     "Wavetable"
 ]
 
-
 # List of parameters that can be adjusted for various devices
 parameters = [
     "volume",
@@ -422,7 +421,93 @@ action_order_templates = [
     ["track {track_number}", "search device", "{device_name}", "{parameter}", "{value_actions}", "{speed_modifiers}", "{value}"],
     ["Map {number}", "{parameter}", "{value}"],
     ["Delete", "Map {number}"],
-    ["{view_actions}"]
+    ["{view_actions}"],
+    
+    # Action orders for Extended Utterance Templates
+    ["{track_creation_actions}", "{track_type}"],  # "Please {track_creation_actions} a new {track_type} track"
+    ["track {track_number}", "{track_actions}"],  # "Could you {track_actions} the track number {track_number}?"
+    ["track {track_number}", "search device", "{audio_effect}"],  # "Kindly add the {audio_effect} effect to track {track_number}"
+    ["track {track_number}", "search device", "{instrument}", "{device_type}"],  # "Insert a {instrument} with {device_type} into track {track_number}"
+    ["{project_actions}"],  # "Execute the project action: {project_actions}"
+    ["track {track_number}", "clip {clip_number}", "{clip_actions}"],  # "Perform the {clip_actions} action on clip {clip_number} in track {track_number}"
+    ["track {track_number}", "duplicate", "search device", "{audio_effect}"],  # "Duplicate track {track_number} and apply the {audio_effect} effect"
+    ["track {track_number1}", "track {track_number2}", "group"],  # "Group together tracks {track_number1} and {track_number2}"
+    ["track {track_number}", "create_send", "search device", "{audio_effect}"],  # "Set up a send from track number {track_number} to {audio_effect}"
+    ["track master", "search device", "{audio_effect}"],  # "Apply the {audio_effect} effect to the master track"
+    ["track {track_number}", "search device", "{device_name}", "{parameter}", "{value_actions}", "{speed_modifiers}", "{value}"],  # "Please {value_actions} the {parameter} of {device_name} on track {track_number} to {value} {speed_modifiers}"
+    ["Map {number}", "{parameter}", "{value}"],  # "Assign control {number} to {parameter} with a value of {value}"
+    ["Delete", "Map {number}"],  # "Remove mapping number {number}"
+    ["{view_actions}"],  # "Change the view to {view_actions}"
+    ["{track_creation_actions}", "{track_type}"],  # "Initiate {track_creation_actions} for a {track_type} track"
+    ["track {track_number}", "{track_actions}"],  # "I want to {track_actions} track {track_number}"
+    ["track {track_number}", "search device", "{audio_effect}", "enable"],  # "Enable the {audio_effect} on track {track_number}"
+    ["track {track_number}", "search device", "{instrument}", "{device_type}", "disable"],  # "Disable the {instrument} with {device_type} on track {track_number}"
+    ["{project_actions}"],  # "Let's {project_actions}"
+    ["track {track_number}", "clip {clip_number}", "{clip_actions}"],  # "Could you {clip_actions} clip {clip_number} on track {track_number}?"
+    ["track {track_number}", "duplicate", "search device", "{audio_effect}"],  # "Make a copy of track {track_number} and add {audio_effect}"
+    ["track {track_number1}", "track {track_number2}", "group"],  # "Combine tracks {track_number1} and {track_number2} into a group"
+    ["track {track_number}", "create_send", "search device", "{audio_effect}"],  # "Establish a send from track {track_number} to {audio_effect}"
+    ["track master", "search device", "{audio_effect}"],  # "Integrate the {audio_effect} into the master track"
+    ["track {track_number}", "search device", "{device_name}", "{parameter}", "{value_actions}", "{speed_modifiers}", "{value}"],  # "Adjust the {parameter} of {device_name} on track {track_number} by {value_actions} to {value} {speed_modifiers}"
+    ["Map {number}", "{parameter}", "{value}"],  # "Map {number} to control {parameter} with value {value}"
+    ["Delete", "Map {number}"],  # "Delete the mapping number {number}"
+    ["{view_actions}"],  # "Switch to {view_actions} view"
+    ["{track_creation_actions}", "{track_type}"],  # "Start {track_creation_actions} a {track_type} track"
+    ["track {track_number}", "{track_actions}"],  # "Please {track_actions} on track {track_number}"
+    ["track {track_number}", "search device", "{audio_effect}"],  # "Add an {audio_effect} to track {track_number}"
+    ["track {track_number}", "search device", "{instrument}", "{device_type}"],  # "Load {instrument} with {device_type} into track {track_number}"
+    ["{project_actions}"],  # "Carry out {project_actions}"
+    ["track {track_number}", "clip {clip_number}", "{clip_actions}"],  # "Execute {clip_actions} on clip {clip_number} of track {track_number}"
+    ["track {track_number}", "duplicate", "search device", "{audio_effect}"],  # "Clone track {track_number} and insert {audio_effect}"
+    ["track {track_number1}", "track {track_number2}", "group"],  # "Merge tracks {track_number1} and {track_number2}"
+    ["track {track_number}", "create_send", "search device", "{audio_effect}"],  # "Create a new send from track {track_number} targeting {audio_effect}"
+    ["track master", "search device", "{audio_effect}"],  # "Deploy the {audio_effect} effect to the master track"
+    ["track {track_number}", "search device", "{device_name}", "{parameter}", "{value_actions}", "{speed_modifiers}", "{value}"],  # "Modify {device_name} {parameter} on track {track_number} by {value_actions} to {value} {speed_modifiers}"
+    ["Map {number}", "{parameter}", "{value}"],  # "Link control {number} with {parameter} set to {value}"
+    ["Delete", "Map {number}"],  # "Remove the mapping identified by {number}"
+    ["{view_actions}"],  # "Navigate to {view_actions} view"
+    ["{track_creation_actions}", "{track_type}"],  # "Initiate the creation of a {track_type} track using {track_creation_actions}"
+    ["track {track_number}", "{track_actions}"],  # "Perform {track_actions} on track {track_number}"
+    ["track {track_number}", "search device", "{audio_effect}"],  # "Insert the {audio_effect} into track {track_number}"
+    ["track {track_number}", "search device", "{instrument}", "{device_type}"],  # "Load a {instrument} with the following device type: {device_type} into track {track_number}"
+    ["{project_actions}"],  # "Perform the project-level action: {project_actions}"
+    ["track {track_number}", "clip {clip_number}", "{clip_actions}"],  # "Execute the clip action {clip_actions} on clip {clip_number} within track {track_number}"
+    ["track {track_number}", "duplicate", "search device", "{audio_effect}"],  # "Duplicate the existing track {track_number} and add {audio_effect}"
+    ["track {track_number1}", "track {track_number2}", "group"],  # "Group the specified tracks {track_number1} and {track_number2}"
+    ["track {track_number}", "create_send", "search device", "{audio_effect}"],  # "Establish a send from track {track_number} directed to {audio_effect}"
+    ["track master", "search device", "{audio_effect}"],  # "Apply {audio_effect} to the master track"
+    ["track {track_number}", "search device", "{device_name}", "{parameter}", "{value_actions}", "{speed_modifiers}", "{value}"],  # "Adjust {device_name}'s {parameter} on track {track_number} by {value_actions} to reach {value} {speed_modifiers}"
+    ["Map {number}", "{parameter}", "{value}"],  # "Assign control {number} to adjust {parameter} with a value setting of {value}"
+    ["Delete", "Map {number}"],  # "Delete the current mapping {number}"
+    ["{view_actions}"],  # "Change the interface to {view_actions}"
+    ["{track_creation_actions}", "{track_type}"],  # "Please {track_creation_actions} a {track_type} track"
+    ["track {track_number}", "{track_actions}"],  # "Kindly {track_actions} on track {track_number}"
+    ["track {track_number}", "search device", "{audio_effect}"],  # "Add {audio_effect} effect to track {track_number}"
+    ["track {track_number}", "search device", "{instrument}", "{device_type}"],  # "Load {instrument} with device type {device_type} into track {track_number}"
+    ["{project_actions}"],  # "Execute the following project action: {project_actions}"
+    ["track {track_number}", "clip {clip_number}", "{clip_actions}"],  # "Perform {clip_actions} on clip number {clip_number} in track {track_number}"
+    ["track {track_number}", "duplicate", "search device", "{audio_effect}"],  # "Make a duplicate of track {track_number} and incorporate {audio_effect}"
+    ["track {track_number1}", "track {track_number2}", "group"],  # "Group tracks numbered {track_number1} and {track_number2}"
+    ["track {track_number}", "create_send", "search device", "{audio_effect}"],  # "Set up a send from track {track_number} to {audio_effect}"
+    ["track master", "search device", "{audio_effect}"],  # "Deploy {audio_effect} on the master track"
+    ["track {track_number}", "search device", "{device_name}", "{parameter}", "{value_actions}", "{speed_modifiers}", "{value}"],  # "Please {value_actions} {parameter} on {device_name} in track {track_number} to {value} {speed_modifiers}"
+    ["Map {number}", "{parameter}", "{value}"],  # "Map control number {number} to {parameter} with value {value}"
+    ["Delete", "Map {number}"],  # "Remove mapping {number}"
+    ["{view_actions}"],  # "Switch view to {view_actions}"
+    ["{track_creation_actions}", "{track_type}"],  # "Create a {track_type} track by {track_creation_actions}"
+    ["track {track_number}", "{track_actions}"],  # "Please {track_actions} of track {track_number}"
+    ["track {track_number}", "search device", "{audio_effect}"],  # "Add the {audio_effect} to the specified track {track_number}"
+    ["track {track_number}", "search device", "{instrument}", "{device_type}"],  # "Load a {instrument} with the {device_type} into track {track_number}"
+    ["{project_actions}"],  # "Carry out the project action: {project_actions}"
+    ["track {track_number}", "clip {clip_number}", "{clip_actions}"],  # "Execute the {clip_actions} on clip {clip_number} in track {track_number}"
+    ["track {track_number}", "duplicate", "search device", "{audio_effect}"],  # "Duplicate track {track_number} and add {audio_effect}"
+    ["track {track_number1}", "track {track_number2}", "group"],  # "Group tracks {track_number1} & {track_number2}"
+    ["track {track_number}", "create_send", "search device", "{audio_effect}"],  # "Create a send from track {track_number} targeting {audio_effect}"
+    ["track master", "search device", "{audio_effect}"],  # "Add {audio_effect} effect to the master track"
+    ["track {track_number}", "search device", "{device_name}", "{parameter}", "{value_actions}", "{speed_modifiers}", "{value}"],  # "Modify {device_name} {parameter} on track {track_number} by {value_actions} to {value} {speed_modifiers}"
+    ["Map {number}", "{parameter}", "{value}"],  # "Assign control {number} to {parameter} with a value of {value}"
+    ["Delete", "Map {number}"],  # "Delete the mapping {number}"
+    ["{view_actions}"]  # "Change the current view to {view_actions}"
 ]
 
 # Updated utterance templates
@@ -440,5 +525,91 @@ utterance_templates = [
     "{value_actions} {device_name} {parameter} on track {track_number} to {value} {speed_modifiers}",
     "Map {number} {parameter} to {value}",
     "Delete Map {number}",
-    "{view_actions}"
+    "{view_actions}",
+
+    # Extended Utterance Templates
+    "Please {track_creation_actions} a new {track_type} track",
+    "Could you {track_actions} the track number {track_number}?",
+    "Kindly add the {audio_effect} effect to track {track_number}",
+    "Insert a {instrument} with {device_type} into track {track_number}",
+    "Execute the project action: {project_actions}",
+    "Perform the {clip_actions} action on clip {clip_number} in track {track_number}",
+    "Duplicate track {track_number} and apply the {audio_effect} effect",
+    "Group together tracks {track_number1} and {track_number2}",
+    "Set up a send from track number {track_number} to {audio_effect}",
+    "Apply the {audio_effect} effect to the master track",
+    "Please {value_actions} the {parameter} of {device_name} on track {track_number} to {value} {speed_modifiers}",
+    "Assign control {number} to {parameter} with a value of {value}",
+    "Remove mapping number {number}",
+    "Change the view to {view_actions}",
+    "Initiate {track_creation_actions} for a {track_type} track",
+    "I want to {track_actions} track {track_number}",
+    "Enable the {audio_effect} on track {track_number}",
+    "Disable the {instrument} with {device_type} on track {track_number}",
+    "Let's {project_actions}",
+    "Could you {clip_actions} clip {clip_number} on track {track_number}?",
+    "Make a copy of track {track_number} and add {audio_effect}",
+    "Combine tracks {track_number1} and {track_number2} into a group",
+    "Establish a send from track {track_number} to {audio_effect}",
+    "Integrate the {audio_effect} into the master track",
+    "Adjust the {parameter} of {device_name} on track {track_number} by {value_actions} to {value} {speed_modifiers}",
+    "Map {number} to control {parameter} with value {value}",
+    "Delete the mapping number {number}",
+    "Switch to {view_actions} view",
+    "Start {track_creation_actions} a {track_type} track",
+    "Please {track_actions} on track {track_number}",
+    "Add an {audio_effect} to track {track_number}",
+    "Load {instrument} with {device_type} into track {track_number}",
+    "Carry out {project_actions}",
+    "Execute {clip_actions} on clip {clip_number} of track {track_number}",
+    "Clone track {track_number} and insert {audio_effect}",
+    "Merge tracks {track_number1} and {track_number2}",
+    "Create a new send from track {track_number} targeting {audio_effect}",
+    "Deploy the {audio_effect} effect to the master track",
+    "Modify {device_name} {parameter} on track {track_number} by {value_actions} to {value} {speed_modifiers}",
+    "Link control {number} with {parameter} set to {value}",
+    "Remove the mapping identified by {number}",
+    "Navigate to {view_actions} view",
+    "Initiate the creation of a {track_type} track using {track_creation_actions}",
+    "Perform {track_actions} on track {track_number}",
+    "Insert the {audio_effect} into track {track_number}",
+    "Load a {instrument} with the following device type: {device_type} into track {track_number}",
+    "Perform the project-level action: {project_actions}",
+    "Execute the clip action {clip_actions} on clip {clip_number} within track {track_number}",
+    "Duplicate the existing track {track_number} and add {audio_effect}",
+    "Group the specified tracks {track_number1} and {track_number2}",
+    "Establish a send from track {track_number} directed to {audio_effect}",
+    "Apply {audio_effect} to the master track",
+    "Adjust {device_name}'s {parameter} on track {track_number} by {value_actions} to reach {value} {speed_modifiers}",
+    "Assign control {number} to adjust {parameter} with a value setting of {value}",
+    "Delete the current mapping {number}",
+    "Change the interface to {view_actions}",
+    "Please {track_creation_actions} a {track_type} track",
+    "Kindly {track_actions} on track {track_number}",
+    "Add {audio_effect} effect to track {track_number}",
+    "Load {instrument} with device type {device_type} into track {track_number}",
+    "Execute the following project action: {project_actions}",
+    "Perform {clip_actions} on clip number {clip_number} in track {track_number}",
+    "Make a duplicate of track {track_number} and incorporate {audio_effect}",
+    "Group tracks numbered {track_number1} and {track_number2}",
+    "Set up a send from track {track_number} to {audio_effect}",
+    "Deploy {audio_effect} on the master track",
+    "Please {value_actions} {parameter} on {device_name} in track {track_number} to {value} {speed_modifiers}",
+    "Map control number {number} to {parameter} with value {value}",
+    "Remove mapping {number}",
+    "Switch view to {view_actions}",
+    "Create a {track_type} track by {track_creation_actions}",
+    "Please {track_actions} of track {track_number}",
+    "Add the {audio_effect} to the specified track {track_number}",
+    "Load a {instrument} with the {device_type} into track {track_number}",
+    "Carry out the project action: {project_actions}",
+    "Execute the {clip_actions} on clip {clip_number} in track {track_number}",
+    "Duplicate track {track_number} and add {audio_effect}",
+    "Group tracks {track_number1} & {track_number2}",
+    "Create a send from track {track_number} targeting {audio_effect}",
+    "Add {audio_effect} effect to the master track",
+    "Modify {device_name} {parameter} on track {track_number} by {value_actions} to {value} {speed_modifiers}",
+    "Assign control {number} to {parameter} with a value of {value}",
+    "Delete the mapping {number}",
+    "Change the current view to {view_actions}"
 ]
