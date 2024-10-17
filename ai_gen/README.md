@@ -2,6 +2,8 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ostinsolo/Audio-Engineer-Sound-Design-LLM/blob/main/ai_gen/auto_utterance_action.ipynb)
 
+**Note on Colab Usage:** The Colab link above has been added for easy viewing and testing of the notebook structure. However, please be aware that the current implementation uses Ollama, a local LLM service, which cannot run directly in the Colab environment. To fully execute this code, you'll need to run it locally with Ollama installed, or modify the LLM implementation to use a cloud-based service accessible from Colab.
+
 This project aims to generate a dataset of natural language utterances and corresponding action sequences for controlling Ableton Live using voice commands. The generated data can be used to train a machine learning model for voice-controlled music production.
 
 ## Project Overview
